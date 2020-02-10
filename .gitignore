@@ -1,0 +1,8 @@
+.DS_Store
+UserInterfaceState.xcuserstate
+
+Carthage/Checkouts
+Carthage/*
+# !Carthage/Build
+
+tmp.swift
