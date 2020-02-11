@@ -9,13 +9,13 @@
 #ifndef Bridging_Header_h_h
 #define Bridging_Header_h_h
 
-#import "World/src/world/dio.h"
-#import "World/src/world/stonemask.h"
-#import "World/src/world/cheaptrick.h"
-#import "World/src/world/d4c.h"
-#import "World/src/world/synthesis.h"
-#import "World/src/world/harvest.h"
-#import "World/src/world/synthesisrealtime.h"
-#import "World/src/world/matlabfunctions.h"
+#import "world/dio.h"
+#import "world/stonemask.h"
+#import "world/cheaptrick.h"
+#import "world/d4c.h"
+#import "world/synthesis.h"
+#import "world/harvest.h"
+#import "world/synthesisrealtime.h"
+#import "world/matlabfunctions.h"
 
 #endif /* Bridging_Header_h_h */
