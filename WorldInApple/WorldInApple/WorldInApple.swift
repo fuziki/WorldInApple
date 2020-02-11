@@ -18,11 +18,11 @@ public class WorldInApple {
     private var x_length: Int
     
     private var parameters: WorldInAppleParameters
-    private var f0EstimationDio: F0EstimationDio
-    private var spectralEnvelopeEstimation: SpectralEnvelopeEstimation
-    private var aperiodicityEstimation: AperiodicityEstimation
-    private var parameterModification: ParameterModification
-    private var waveformSynthesis3: WaveformSynthesis3
+    private var f0Estimator: DioF0Estimator
+    private var spectralEnvelopeEstimator: SpectralEnvelopeEstimator
+    private var aperiodicityEstimator: AperiodicityEstimator
+    private var parameterModificator: ParameterModificator
+    private var synthesizer: WorldInAppleSynthesizer3
     
     private let timer = BagotTimer()
     
@@ -31,16 +31,16 @@ public class WorldInApple {
         onUpdateSettingHandlers.append(handler)
     }
     
-    init(fs: Int, frame_period: Double, x_length: Int) {
+    public init(fs: Int, frame_period: Double, x_length: Int) {
         self.fs = fs
         self.frame_period = frame_period
         self.x_length = x_length
         parameters = WorldInAppleParameters(fs: fs, frame_period: frame_period, x_length: x_length)
-        f0EstimationDio = F0EstimationDio(parameters: parameters)
-        spectralEnvelopeEstimation = SpectralEnvelopeEstimation(parameters: parameters)
-        aperiodicityEstimation = AperiodicityEstimation(parameters: parameters)
-        parameterModification = ParameterModification(parameters: parameters)
-        waveformSynthesis3 = WaveformSynthesis3(parameters: parameters)
+        f0Estimator = DioF0Estimator(parameters: parameters)
+        spectralEnvelopeEstimator = SpectralEnvelopeEstimator(parameters: parameters)
+        aperiodicityEstimator = AperiodicityEstimator(parameters: parameters)
+        parameterModificator = ParameterModificator(parameters: parameters)
+        synthesizer = WorldInAppleSynthesizer3(parameters: parameters)
     }
     
     public func updateSetting(fs _fs: Int? = nil,
@@ -56,11 +56,11 @@ public class WorldInApple {
         self.frame_period = n_frame_period
         self.x_length = n_x_length
         parameters = WorldInAppleParameters(fs: fs, frame_period: frame_period, x_length: x_length)
-        f0EstimationDio = F0EstimationDio(parameters: parameters)
-        spectralEnvelopeEstimation = SpectralEnvelopeEstimation(parameters: parameters)
-        aperiodicityEstimation = AperiodicityEstimation(parameters: parameters)
-        parameterModification = ParameterModification(parameters: parameters)
-        waveformSynthesis3 = WaveformSynthesis3(parameters: parameters)
+        f0Estimator = DioF0Estimator(parameters: parameters)
+        spectralEnvelopeEstimator = SpectralEnvelopeEstimator(parameters: parameters)
+        aperiodicityEstimator = AperiodicityEstimator(parameters: parameters)
+        parameterModificator = ParameterModificator(parameters: parameters)
+        synthesizer = WorldInAppleSynthesizer3(parameters: parameters)
         for handler in onUpdateSettingHandlers {
             handler(fs, frame_period, x_length)
         }
@@ -71,7 +71,7 @@ public class WorldInApple {
     }
     
     public func set(pitch: Double? = nil, formant: Double? = nil) {
-        parameterModification.set(pitch: pitch, formant: formant)
+        parameterModificator.set(pitch: pitch, formant: formant)
     }
     
     public func conv(buffer: AVAudioPCMBuffer) -> AVAudioPCMBuffer? {
@@ -82,27 +82,27 @@ public class WorldInApple {
         
         let pre = timer.timeSec
 
-        f0EstimationDio.estimateF0(x: x, x_length: x_length)
+        f0Estimator.estimateF0(x: x, x_length: x_length)
 
         let pre2 = timer.timeSec
         print("elapsed f0: \(pre2 - pre)")
 
-        spectralEnvelopeEstimation.estimateSpectral(x: x, x_length: x_length)
+        spectralEnvelopeEstimator.estimateSpectral(x: x, x_length: x_length)
 
         let pre3 = timer.timeSec
         print("elapsed sp: \(pre3 - pre2)")
 
-        aperiodicityEstimation.estimatAperiodicity(x: x, x_length: x_length)
+        aperiodicityEstimator.estimatAperiodicity(x: x, x_length: x_length)
 
         let pre4 = timer.timeSec
         print("elapsed ap: \(pre4 - pre3)")
 
-        parameterModification.modificate()
+        parameterModificator.modificate()
 
         let pre5 = timer.timeSec
         print("elapsed md: \(pre5 - pre4)")
 
-        let res = waveformSynthesis3.synthesis(buffer: buffer)
+        let res = synthesizer.synthesis(buffer: buffer)
 
         let pre6 = timer.timeSec
         print("elapsed sy: \(pre6 - pre5)")
