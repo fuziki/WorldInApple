@@ -17,13 +17,13 @@
 		17996AC06CFF11CEB98DA1DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 515EFAA2D7B45F8C9AC361C6 /* Assets.xcassets */; };
 		1805FAEA0ABB0B46E6EF1619 /* WorldInAppleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07170259853CBAB16278C058 /* WorldInAppleComponents.swift */; };
 		1B7C53AA4D00AF0A8088455F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */; };
-		1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimation.swift */; };
-		24A048CF4A1B156130C74B20 /* ParameterModification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E38256B043BFE0A472510A /* ParameterModification.swift */; };
+		1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */; };
+		24A048CF4A1B156130C74B20 /* ParameterModificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E38256B043BFE0A472510A /* ParameterModificator.swift */; };
 		2AF692C076FE7A21768A1CED /* matlabfunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C54D9B27B2CC3852CD6FEAA /* matlabfunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B84B305DBBDE9147DED37E6 /* synthesis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67346AB005F01A0DF7F6FF7A /* synthesis.cpp */; };
 		35EF5F6F78B0FD5791D176C1 /* stonemask.h in Headers */ = {isa = PBXBuildFile; fileRef = B4297431E2F0BBBC5D3E0BB8 /* stonemask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3625E0BC82DC45BB91E9FF49 /* WaveformSynthesis3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9FF2F23F771DB4451DBE2A /* WaveformSynthesis3.swift */; };
-		39DA74ABA01C1063137C839F /* F0EstimationDio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADF9CFC9F026376007D7D9 /* F0EstimationDio.swift */; };
+		3625E0BC82DC45BB91E9FF49 /* WorldInAppleSynthesizer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */; };
+		39DA74ABA01C1063137C839F /* DioF0Estimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */; };
 		3C50C57B17CDB4C0953A4764 /* harvest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E1C27D15E7C186E84BB1A2 /* harvest.cpp */; };
 		471C8323C3339F1A89CC3312 /* IikanjiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */; };
 		4F46A8A4ABA54850269A1BB3 /* cheaptrick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88B47038D19F50385DCC4CD3 /* cheaptrick.cpp */; };
@@ -46,7 +46,7 @@
 		C42B2457E92E2C760C078A5E /* WorldInApple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD625F9BA647A2246474290 /* WorldInApple.framework */; };
 		C7F3E9729738A3FCF2897C10 /* synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = 005EAD128B1930ED2AA33FA5 /* synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C98F371FA4C5EBFBB53A3CAD /* synthesisrealtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB2761B84AB6646A65B80CAF /* synthesisrealtime.cpp */; };
-		D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimation.swift */; };
+		D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */; };
 		DA22B48B30E192D11A08F984 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC8EC688E0F68B2E2FBA20AB /* WorldInApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */; };
 		DFB47A564D32465CF4699C49 /* constantnumbers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2815D535CC46C04E1B4A0513 /* constantnumbers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -110,10 +110,10 @@
 		67346AB005F01A0DF7F6FF7A /* synthesis.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesis.cpp; sourceTree = "<group>"; };
 		69A52C4951687DEDF88F096D /* dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dio.h; sourceTree = "<group>"; };
 		6C54D9B27B2CC3852CD6FEAA /* matlabfunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matlabfunctions.h; sourceTree = "<group>"; };
-		79E38256B043BFE0A472510A /* ParameterModification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModification.swift; sourceTree = "<group>"; };
+		79E38256B043BFE0A472510A /* ParameterModificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModificator.swift; sourceTree = "<group>"; };
 		810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		86AABED0577973650E9401C1 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
-		87ADF9CFC9F026376007D7D9 /* F0EstimationDio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = F0EstimationDio.swift; sourceTree = "<group>"; };
+		87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DioF0Estimator.swift; sourceTree = "<group>"; };
 		88B47038D19F50385DCC4CD3 /* cheaptrick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cheaptrick.cpp; sourceTree = "<group>"; };
 		8A79516F38987F0FCC52869C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleParameters.swift; sourceTree = "<group>"; };
@@ -124,9 +124,9 @@
 		BE7F7909EB14DD6A3978AE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D20832B7B40020BF4BD98C96 /* WorldInApple.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorldInApple.xcconfig; sourceTree = "<group>"; };
 		E7B4135DD593D48067902590 /* cheaptrick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cheaptrick.h; sourceTree = "<group>"; };
-		E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AperiodicityEstimation.swift; sourceTree = "<group>"; };
-		EC9FF2F23F771DB4451DBE2A /* WaveformSynthesis3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveformSynthesis3.swift; sourceTree = "<group>"; };
-		ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralEnvelopeEstimation.swift; sourceTree = "<group>"; };
+		E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AperiodicityEstimator.swift; sourceTree = "<group>"; };
+		EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleSynthesizer3.swift; sourceTree = "<group>"; };
+		ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralEnvelopeEstimator.swift; sourceTree = "<group>"; };
 		EE2CDDA0BBB60EE73EE66622 /* fft.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
 		F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB2761B84AB6646A65B80CAF /* synthesisrealtime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesisrealtime.cpp; sourceTree = "<group>"; };
@@ -156,11 +156,11 @@
 		12B018DC676B130324918310 /* WorldInApple */ = {
 			isa = PBXGroup;
 			children = (
-				E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimation.swift */,
-				87ADF9CFC9F026376007D7D9 /* F0EstimationDio.swift */,
-				79E38256B043BFE0A472510A /* ParameterModification.swift */,
-				ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimation.swift */,
-				EC9FF2F23F771DB4451DBE2A /* WaveformSynthesis3.swift */,
+				E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */,
+				87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */,
+				79E38256B043BFE0A472510A /* ParameterModificator.swift */,
+				ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */,
+				EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */,
 				2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */,
 				07170259853CBAB16278C058 /* WorldInAppleComponents.swift */,
 				928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */,
@@ -446,12 +446,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimation.swift in Sources */,
+				1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimator.swift in Sources */,
 				041CB8B71227566DCC9B35C1 /* BagotTimer.swift in Sources */,
-				39DA74ABA01C1063137C839F /* F0EstimationDio.swift in Sources */,
-				24A048CF4A1B156130C74B20 /* ParameterModification.swift in Sources */,
-				D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimation.swift in Sources */,
-				3625E0BC82DC45BB91E9FF49 /* WaveformSynthesis3.swift in Sources */,
+				39DA74ABA01C1063137C839F /* DioF0Estimator.swift in Sources */,
+				24A048CF4A1B156130C74B20 /* ParameterModificator.swift in Sources */,
+				D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimator.swift in Sources */,
+				3625E0BC82DC45BB91E9FF49 /* WorldInAppleSynthesizer3.swift in Sources */,
 				DC8EC688E0F68B2E2FBA20AB /* WorldInApple.swift in Sources */,
 				1805FAEA0ABB0B46E6EF1619 /* WorldInAppleComponents.swift in Sources */,
 				EB8DF15E5095A2C93DADBB0F /* WorldInAppleParameters.swift in Sources */,

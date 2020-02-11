@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class F0EstimationDio: WorldInAppleComponents {
+public class DioF0Estimator: WorldInAppleComponents {
     private var parameters: WorldInAppleParameters
 
     private var _f0: UnsafeMutablePointer<Double>

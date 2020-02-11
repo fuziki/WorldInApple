@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-public class WaveformSynthesis3: WorldInAppleComponents {
+public class WorldInAppleSynthesizer3: WorldInAppleComponents {
     private var parameters: WorldInAppleParameters
     
     private let buffer_size = 64

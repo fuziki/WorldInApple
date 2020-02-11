@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class SpectralEnvelopeEstimation: WorldInAppleComponents {
+public class SpectralEnvelopeEstimator: WorldInAppleComponents {
     private var parameters: WorldInAppleParameters
     
     private var cheapOption = CheapTrickOption()

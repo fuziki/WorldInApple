@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class AperiodicityEstimation: WorldInAppleComponents {
+public class AperiodicityEstimator: WorldInAppleComponents {
     private var parameters: WorldInAppleParameters
 
     private var d4cOption = D4COption()

@@ -9,7 +9,7 @@
 import Foundation
 import Accelerate
 
-public class ParameterModification: WorldInAppleComponents {
+public class ParameterModificator: WorldInAppleComponents {
     private var parameters: WorldInAppleParameters
 
     private var freq_axis1: UnsafeMutablePointer<Double>
