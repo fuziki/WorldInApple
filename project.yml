@@ -7,8 +7,8 @@ targets:
     deploymentTarget: 11.0
 
     configFiles:
-      Debug: configs/WorldInApple.xcconfig
-      Release: configs/WorldInApple.xcconfig
+      Debug: Configs/WorldInApple.xcconfig
+      Release: Configs/WorldInApple.xcconfig
 
     settings:
       INFOPLIST_FILE: WorldInApple/info.plist
@@ -35,8 +35,7 @@ targets:
     sources:
       - path: Example/iOS
         name: iOS
-        group: Example
-        createIntermediateGroups: true
+        group: Example/iOS
 
     dependencies:
       - target: WorldInApple
