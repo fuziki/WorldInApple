@@ -156,14 +156,9 @@
 		12B018DC676B130324918310 /* WorldInApple */ = {
 			isa = PBXGroup;
 			children = (
-				E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */,
-				87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */,
-				79E38256B043BFE0A472510A /* ParameterModificator.swift */,
-				ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */,
-				EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */,
 				2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */,
-				07170259853CBAB16278C058 /* WorldInAppleComponents.swift */,
 				928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */,
+				5257548E23F26899005F77CA /* WorldInAppleComponents */,
 			);
 			path = WorldInApple;
 			sourceTree = "<group>";
@@ -191,6 +186,19 @@
 			);
 			name = iOS;
 			path = Example/iOS;
+			sourceTree = "<group>";
+		};
+		5257548E23F26899005F77CA /* WorldInAppleComponents */ = {
+			isa = PBXGroup;
+			children = (
+				07170259853CBAB16278C058 /* WorldInAppleComponents.swift */,
+				E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */,
+				87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */,
+				79E38256B043BFE0A472510A /* ParameterModificator.swift */,
+				ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */,
+				EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */,
+			);
+			path = WorldInAppleComponents;
 			sourceTree = "<group>";
 		};
 		605C1B3E91D12043256B2466 /* World */ = {
