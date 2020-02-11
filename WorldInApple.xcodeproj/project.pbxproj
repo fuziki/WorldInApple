@@ -214,6 +214,7 @@
 				525F522A4B6C159C09E93084 /* Main.storyboard */,
 				F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */,
 				A535F1EC19D3DB96FBE96FA5 /* ViewController.swift */,
+				9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */,
 				6C79C5ABF8F4F620DE48F3E4 /* Utls */,
 			);
 			name = iOS;
@@ -225,7 +226,6 @@
 			children = (
 				24C0A7218FA586703B7BA023 /* AccelerateUtil.swift */,
 				36A888D98F512E403BFC02CD /* AVAudioPCMBuffer+Extension.swift */,
-				9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */,
 			);
 			path = Utls;
 			sourceTree = "<group>";
