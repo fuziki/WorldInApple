@@ -1,0 +1,43 @@
+name: WorldInApple
+
+targets:
+  WorldInApple:
+    type: framework
+    platform: iOS
+    deploymentTarget: 11.0
+
+    configFiles:
+      Debug: configs/WorldInApple.xcconfig
+      Release: configs/WorldInApple.xcconfig
+
+    settings:
+      INFOPLIST_FILE: WorldInApple/info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.framework.ios
+      SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/WorldInApple/Bridging-Header.h
+      USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/WorldInApple/World/src
+
+    sources:
+      - path: WorldInApple
+        name: WorldInApple
+        group: WorldInApple
+        createIntermediateGroups: true
+
+  Example_iOS:
+    type: application
+    platform: iOS
+    deploymentTarget: 13.0
+
+    settings:
+      INFOPLIST_FILE: Example/iOS/info.plist
+      PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.example2
+      SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/Example/iOS/Bridging-Header.h
+
+    sources:
+      - path: Example/iOS
+        name: iOS
+        group: Example
+        createIntermediateGroups: true
+
+    dependencies:
+      - target: WorldInApple
+      - carthage: Charts

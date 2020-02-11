@@ -31,7 +31,7 @@ public class WorldInApple {
         onUpdateSettingHandlers.append(handler)
     }
     
-    init(fs: Int, frame_period: Double, x_length: Int) {
+    public init(fs: Int, frame_period: Double, x_length: Int) {
         self.fs = fs
         self.frame_period = frame_period
         self.x_length = x_length
