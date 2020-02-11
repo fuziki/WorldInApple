@@ -6,21 +6,24 @@ targets:
     platform: iOS
     deploymentTarget: 11.0
 
-    configFiles:
-      Debug: Configs/WorldInApple.xcconfig
-      Release: Configs/WorldInApple.xcconfig
-
     settings:
       INFOPLIST_FILE: WorldInApple/info.plist
       PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.framework.ios
       SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/WorldInApple/Bridging-Header.h
-      USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/WorldInApple/World/src
+      USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/World/src
 
     sources:
       - path: WorldInApple
         name: WorldInApple
         group: WorldInApple
         createIntermediateGroups: true
+        
+      - path: World/src
+        name: src
+        group: World/src
+        createIntermediateGroups: true
+
+
 
   Example_iOS:
     type: application
