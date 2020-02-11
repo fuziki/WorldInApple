@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02F73ADEA8399C16DAEDB682 /* ParameterModificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B600652F9CABB50FA813AF /* ParameterModificator.swift */; };
 		03563FF651CC1932766C8192 /* macrodefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 94FC29B3AB63D71A41F0B327 /* macrodefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0385243A7E7039218362844B /* synthesisrealtime.h in Headers */ = {isa = PBXBuildFile; fileRef = 521D28F095339FA30D6C74A4 /* synthesisrealtime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		041CB8B71227566DCC9B35C1 /* BagotTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E04143D4508F7DB07C0AB5 /* BagotTimer.swift */; };
@@ -15,22 +16,21 @@
 		14AFE8158E0790D27FD095DC /* d4c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 672A069DCFE370D6816EB9EE /* d4c.cpp */; };
 		1668A109458A06580DC857AA /* fft.h in Headers */ = {isa = PBXBuildFile; fileRef = 505F42042FBF00C5F7202655 /* fft.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17996AC06CFF11CEB98DA1DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 515EFAA2D7B45F8C9AC361C6 /* Assets.xcassets */; };
-		1805FAEA0ABB0B46E6EF1619 /* WorldInAppleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07170259853CBAB16278C058 /* WorldInAppleComponents.swift */; };
 		1B7C53AA4D00AF0A8088455F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */; };
-		1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */; };
-		24A048CF4A1B156130C74B20 /* ParameterModificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79E38256B043BFE0A472510A /* ParameterModificator.swift */; };
 		2AF692C076FE7A21768A1CED /* matlabfunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 6C54D9B27B2CC3852CD6FEAA /* matlabfunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		2B84B305DBBDE9147DED37E6 /* synthesis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 67346AB005F01A0DF7F6FF7A /* synthesis.cpp */; };
 		35EF5F6F78B0FD5791D176C1 /* stonemask.h in Headers */ = {isa = PBXBuildFile; fileRef = B4297431E2F0BBBC5D3E0BB8 /* stonemask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3625E0BC82DC45BB91E9FF49 /* WorldInAppleSynthesizer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */; };
-		39DA74ABA01C1063137C839F /* DioF0Estimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */; };
 		3C50C57B17CDB4C0953A4764 /* harvest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 64E1C27D15E7C186E84BB1A2 /* harvest.cpp */; };
+		46D15443C00E85D024C889A8 /* AperiodicityEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4200BF671D0D4CE4DBFC00 /* AperiodicityEstimator.swift */; };
 		471C8323C3339F1A89CC3312 /* IikanjiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */; };
+		47AC6E7034FBE725B0A2251E /* WorldInAppleSynthesizer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185646EA497EFBECC3C3012 /* WorldInAppleSynthesizer3.swift */; };
 		4F46A8A4ABA54850269A1BB3 /* cheaptrick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 88B47038D19F50385DCC4CD3 /* cheaptrick.cpp */; };
 		52D0626F320F515155B6F5B1 /* codec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 34E09180062F556A68F704A3 /* codec.cpp */; };
 		54F9C44E7F82B12CE768DFB2 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE2CDDA0BBB60EE73EE66622 /* fft.cpp */; };
 		5EE09B51AAFDF3F807F5BBE1 /* dio.h in Headers */ = {isa = PBXBuildFile; fileRef = 69A52C4951687DEDF88F096D /* dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5FE3CFECB0BC06FF20422F67 /* SpectralEnvelopeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB741E4ED2174E0FD2EC74 /* SpectralEnvelopeEstimator.swift */; };
 		6134C9AB93410F48EAA13998 /* cheaptrick.h in Headers */ = {isa = PBXBuildFile; fileRef = E7B4135DD593D48067902590 /* cheaptrick.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68AD66BC4848C1F6FCFE6D0A /* WorldInAppleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0784CCECCC0D62FE9B31E9A /* WorldInAppleComponents.swift */; };
 		702A9A7A344E65CAE134DEAD /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27F5204EEBDA4EB455968847 /* common.cpp */; };
 		784350DFD75CD907C458174A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F1EC19D3DB96FBE96FA5 /* ViewController.swift */; };
 		83EA05879630927CDA27647F /* stonemask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2D753F111960010587DB8A1B /* stonemask.cpp */; };
@@ -46,7 +46,7 @@
 		C42B2457E92E2C760C078A5E /* WorldInApple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD625F9BA647A2246474290 /* WorldInApple.framework */; };
 		C7F3E9729738A3FCF2897C10 /* synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = 005EAD128B1930ED2AA33FA5 /* synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C98F371FA4C5EBFBB53A3CAD /* synthesisrealtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FB2761B84AB6646A65B80CAF /* synthesisrealtime.cpp */; };
-		D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */; };
+		D3906253E00849FAE127BA12 /* DioF0Estimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AF4D625C919F777AD8D67D /* DioF0Estimator.swift */; };
 		DA22B48B30E192D11A08F984 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC8EC688E0F68B2E2FBA20AB /* WorldInApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */; };
 		DFB47A564D32465CF4699C49 /* constantnumbers.h in Headers */ = {isa = PBXBuildFile; fileRef = 2815D535CC46C04E1B4A0513 /* constantnumbers.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -82,7 +82,6 @@
 /* Begin PBXFileReference section */
 		005EAD128B1930ED2AA33FA5 /* synthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = synthesis.h; sourceTree = "<group>"; };
 		0616CB8D59122CB855C96697 /* dio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dio.cpp; sourceTree = "<group>"; };
-		07170259853CBAB16278C058 /* WorldInAppleComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleComponents.swift; sourceTree = "<group>"; };
 		0737EADC5283B96C03A416EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C57892535ECA830FADDD306 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		10AD8A9FBFF337804AA0AFAE /* codec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codec.h; sourceTree = "<group>"; };
@@ -104,30 +103,31 @@
 		505F42042FBF00C5F7202655 /* fft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
 		515EFAA2D7B45F8C9AC361C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		521D28F095339FA30D6C74A4 /* synthesisrealtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = synthesisrealtime.h; sourceTree = "<group>"; };
+		53B600652F9CABB50FA813AF /* ParameterModificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModificator.swift; sourceTree = "<group>"; };
 		60DA65901B16F835725880DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		64E1C27D15E7C186E84BB1A2 /* harvest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = harvest.cpp; sourceTree = "<group>"; };
 		672A069DCFE370D6816EB9EE /* d4c.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = d4c.cpp; sourceTree = "<group>"; };
 		67346AB005F01A0DF7F6FF7A /* synthesis.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesis.cpp; sourceTree = "<group>"; };
 		69A52C4951687DEDF88F096D /* dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dio.h; sourceTree = "<group>"; };
 		6C54D9B27B2CC3852CD6FEAA /* matlabfunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matlabfunctions.h; sourceTree = "<group>"; };
-		79E38256B043BFE0A472510A /* ParameterModificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModificator.swift; sourceTree = "<group>"; };
+		75AF4D625C919F777AD8D67D /* DioF0Estimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DioF0Estimator.swift; sourceTree = "<group>"; };
 		810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		86AABED0577973650E9401C1 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
-		87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DioF0Estimator.swift; sourceTree = "<group>"; };
 		88B47038D19F50385DCC4CD3 /* cheaptrick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cheaptrick.cpp; sourceTree = "<group>"; };
 		8A79516F38987F0FCC52869C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleParameters.swift; sourceTree = "<group>"; };
 		94FC29B3AB63D71A41F0B327 /* macrodefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macrodefinitions.h; sourceTree = "<group>"; };
 		9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IikanjiEngine.swift; sourceTree = "<group>"; };
+		A0784CCECCC0D62FE9B31E9A /* WorldInAppleComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleComponents.swift; sourceTree = "<group>"; };
 		A535F1EC19D3DB96FBE96FA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B4297431E2F0BBBC5D3E0BB8 /* stonemask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stonemask.h; sourceTree = "<group>"; };
 		BE7F7909EB14DD6A3978AE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D185646EA497EFBECC3C3012 /* WorldInAppleSynthesizer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleSynthesizer3.swift; sourceTree = "<group>"; };
+		D1EB741E4ED2174E0FD2EC74 /* SpectralEnvelopeEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralEnvelopeEstimator.swift; sourceTree = "<group>"; };
 		D20832B7B40020BF4BD98C96 /* WorldInApple.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorldInApple.xcconfig; sourceTree = "<group>"; };
 		E7B4135DD593D48067902590 /* cheaptrick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cheaptrick.h; sourceTree = "<group>"; };
-		E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AperiodicityEstimator.swift; sourceTree = "<group>"; };
-		EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleSynthesizer3.swift; sourceTree = "<group>"; };
-		ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralEnvelopeEstimator.swift; sourceTree = "<group>"; };
 		EE2CDDA0BBB60EE73EE66622 /* fft.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
+		EF4200BF671D0D4CE4DBFC00 /* AperiodicityEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AperiodicityEstimator.swift; sourceTree = "<group>"; };
 		F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB2761B84AB6646A65B80CAF /* synthesisrealtime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesisrealtime.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,6 +145,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0087D359D3F4EB7261A39009 /* WorldInAppleComponents */ = {
+			isa = PBXGroup;
+			children = (
+				EF4200BF671D0D4CE4DBFC00 /* AperiodicityEstimator.swift */,
+				75AF4D625C919F777AD8D67D /* DioF0Estimator.swift */,
+				53B600652F9CABB50FA813AF /* ParameterModificator.swift */,
+				D1EB741E4ED2174E0FD2EC74 /* SpectralEnvelopeEstimator.swift */,
+				A0784CCECCC0D62FE9B31E9A /* WorldInAppleComponents.swift */,
+				D185646EA497EFBECC3C3012 /* WorldInAppleSynthesizer3.swift */,
+			);
+			path = WorldInAppleComponents;
+			sourceTree = "<group>";
+		};
 		0FC7E7B73C6C49B9B7531753 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +171,7 @@
 			children = (
 				2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */,
 				928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */,
-				5257548E23F26899005F77CA /* WorldInAppleComponents */,
+				0087D359D3F4EB7261A39009 /* WorldInAppleComponents */,
 			);
 			path = WorldInApple;
 			sourceTree = "<group>";
@@ -186,19 +199,6 @@
 			);
 			name = iOS;
 			path = Example/iOS;
-			sourceTree = "<group>";
-		};
-		5257548E23F26899005F77CA /* WorldInAppleComponents */ = {
-			isa = PBXGroup;
-			children = (
-				07170259853CBAB16278C058 /* WorldInAppleComponents.swift */,
-				E8306EB7ECFB13FFFE91E7C5 /* AperiodicityEstimator.swift */,
-				87ADF9CFC9F026376007D7D9 /* DioF0Estimator.swift */,
-				79E38256B043BFE0A472510A /* ParameterModificator.swift */,
-				ED2D509FE8C9BCA2C6727F35 /* SpectralEnvelopeEstimator.swift */,
-				EC9FF2F23F771DB4451DBE2A /* WorldInAppleSynthesizer3.swift */,
-			);
-			path = WorldInAppleComponents;
 			sourceTree = "<group>";
 		};
 		605C1B3E91D12043256B2466 /* World */ = {
@@ -454,15 +454,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1BC13114D8C4B24D5EEAF0D5 /* AperiodicityEstimator.swift in Sources */,
+				46D15443C00E85D024C889A8 /* AperiodicityEstimator.swift in Sources */,
 				041CB8B71227566DCC9B35C1 /* BagotTimer.swift in Sources */,
-				39DA74ABA01C1063137C839F /* DioF0Estimator.swift in Sources */,
-				24A048CF4A1B156130C74B20 /* ParameterModificator.swift in Sources */,
-				D493EC4D41BCFB723D8EA461 /* SpectralEnvelopeEstimator.swift in Sources */,
-				3625E0BC82DC45BB91E9FF49 /* WorldInAppleSynthesizer3.swift in Sources */,
+				D3906253E00849FAE127BA12 /* DioF0Estimator.swift in Sources */,
+				02F73ADEA8399C16DAEDB682 /* ParameterModificator.swift in Sources */,
+				5FE3CFECB0BC06FF20422F67 /* SpectralEnvelopeEstimator.swift in Sources */,
 				DC8EC688E0F68B2E2FBA20AB /* WorldInApple.swift in Sources */,
-				1805FAEA0ABB0B46E6EF1619 /* WorldInAppleComponents.swift in Sources */,
+				68AD66BC4848C1F6FCFE6D0A /* WorldInAppleComponents.swift in Sources */,
 				EB8DF15E5095A2C93DADBB0F /* WorldInAppleParameters.swift in Sources */,
+				47AC6E7034FBE725B0A2251E /* WorldInAppleSynthesizer3.swift in Sources */,
 				4F46A8A4ABA54850269A1BB3 /* cheaptrick.cpp in Sources */,
 				52D0626F320F515155B6F5B1 /* codec.cpp in Sources */,
 				702A9A7A344E65CAE134DEAD /* common.cpp in Sources */,
