@@ -6,10 +6,6 @@ targets:
     platform: iOS
     deploymentTarget: 11.0
 
-#    configFiles:
-#      Debug: WorldInApple/WorldInApple.xcconfig
-#      Release: WorldInApple/WorldInApple.xcconfig
-
     settings:
       INFOPLIST_FILE: WorldInApple/info.plist
       PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.framework.ios
@@ -17,20 +13,20 @@ targets:
       USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/WorldInApple/World/src
 
     sources:
-      - path: WorldInApple
-        type: folder
-        buildPhase: none
-        group: WorldInApple
+#      - path: WorldInApple
+#        type: folder
+#        buildPhase: none
+#        group: WorldInApple
         
       - path: WorldInApple
         name: WorldInApple
         group: WorldInApple
         createIntermediateGroups: true
         
-      - path: World/src
-        name: WorldInApple
-        group: WorldInApple
-        createIntermediateGroups: true
+#      - path: World/src
+#        name: WorldInApple
+#        group: WorldInApple
+#        createIntermediateGroups: true
 
 
 

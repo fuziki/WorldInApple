@@ -9,50 +9,26 @@
 /* Begin PBXBuildFile section */
 		02F73ADEA8399C16DAEDB682 /* ParameterModificator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B600652F9CABB50FA813AF /* ParameterModificator.swift */; };
 		041CB8B71227566DCC9B35C1 /* BagotTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43E04143D4508F7DB07C0AB5 /* BagotTimer.swift */; };
-		0C0F59A31E06A2BC0E9AF269 /* matlabfunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 134104F5581C5BCCF48AC344 /* matlabfunctions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		0ECA5E49758CA2F43CD747CD /* AccelerateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C0A7218FA586703B7BA023 /* AccelerateUtil.swift */; };
-		149A68355DB0FFEB15C3768C /* d4c.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 981B7093AE8C30E178ECBF60 /* d4c.cpp */; };
 		17996AC06CFF11CEB98DA1DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 515EFAA2D7B45F8C9AC361C6 /* Assets.xcassets */; };
 		1B7C53AA4D00AF0A8088455F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */; };
-		1C9FE597111544232C48F704 /* dio.h in Headers */ = {isa = PBXBuildFile; fileRef = 74F581A877837799751CFA11 /* dio.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		32FA4ABC85691608F484D0FB /* stonemask.h in Headers */ = {isa = PBXBuildFile; fileRef = 76AD3E58DAA6FDAF361CE68F /* stonemask.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		40742B3B9CB6219AD3BB05BD /* common.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A0EC31085589432BFE5ED363 /* common.cpp */; };
 		46D15443C00E85D024C889A8 /* AperiodicityEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4200BF671D0D4CE4DBFC00 /* AperiodicityEstimator.swift */; };
 		471C8323C3339F1A89CC3312 /* IikanjiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */; };
 		47AC6E7034FBE725B0A2251E /* WorldInAppleSynthesizer3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D185646EA497EFBECC3C3012 /* WorldInAppleSynthesizer3.swift */; };
-		4BA45F0AC6AE9DB5967A87AA /* constantnumbers.h in Headers */ = {isa = PBXBuildFile; fileRef = FA09DAFE9CD0FC9031E23CB7 /* constantnumbers.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		55E89154B44D833280AA692B /* common.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A39FC34344F3DE1F574BDE5 /* common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FE3CFECB0BC06FF20422F67 /* SpectralEnvelopeEstimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1EB741E4ED2174E0FD2EC74 /* SpectralEnvelopeEstimator.swift */; };
 		68AD66BC4848C1F6FCFE6D0A /* WorldInAppleComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0784CCECCC0D62FE9B31E9A /* WorldInAppleComponents.swift */; };
 		784350DFD75CD907C458174A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A535F1EC19D3DB96FBE96FA5 /* ViewController.swift */; };
 		85DF8848484669972CE0B07E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 525F522A4B6C159C09E93084 /* Main.storyboard */; };
-		8755C2352B7D628744A5E9FA /* macrodefinitions.h in Headers */ = {isa = PBXBuildFile; fileRef = 75F82A5F429B8962D1B9EEDC /* macrodefinitions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		885E9E2F507BFEC87E305BBA /* harvest.h in Headers */ = {isa = PBXBuildFile; fileRef = 45B40C26081FFDE76C2A4213 /* harvest.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8DA58C202634385648A1D892 /* matlabfunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C38E077BA5A7634B50C56B46 /* matlabfunctions.cpp */; };
-		9ADB8BDC55C4650871CCCD7C /* cheaptrick.h in Headers */ = {isa = PBXBuildFile; fileRef = F0E6BA12251752B35136DFE9 /* cheaptrick.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B10AD68D33A969963031DFF /* stonemask.cpp in Sources */ = {isa = PBXBuildFile; fileRef = A9A4E5D717A7E2055719E8AA /* stonemask.cpp */; };
 		9E67C611CE7CCC96042DA721 /* WorldInApple.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD625F9BA647A2246474290 /* WorldInApple.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		9EFFD9348BC0B3473118BFF5 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86AABED0577973650E9401C1 /* Charts.framework */; };
-		9FF826EB9F1C45D7D5067CA8 /* fft.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 37ED94AF5430313F3F976BCE /* fft.cpp */; };
-		A75A59ABBCC085F70C132DBF /* codec.cpp in Sources */ = {isa = PBXBuildFile; fileRef = FBECB1679649679E8CB24919 /* codec.cpp */; };
-		A8B4B1023A13EADDAB398163 /* dio.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 92ACC934307ACD363C892A3A /* dio.cpp */; };
-		BA83B57E59F203E0D2184110 /* synthesisrealtime.h in Headers */ = {isa = PBXBuildFile; fileRef = C33D6C235E7AC6DAD9A81D7D /* synthesisrealtime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0933DCD84BABF3BC985D4DF /* AVAudioPCMBuffer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A888D98F512E403BFC02CD /* AVAudioPCMBuffer+Extension.swift */; };
 		C42B2457E92E2C760C078A5E /* WorldInApple.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AD625F9BA647A2246474290 /* WorldInApple.framework */; };
-		CE26A9310A6D6F5394EC0CAA /* cheaptrick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AD331DC4903346A39D96048 /* cheaptrick.cpp */; };
-		CFC6051F4CD4E773D7DEBB50 /* d4c.h in Headers */ = {isa = PBXBuildFile; fileRef = 07292755912A058F1648167B /* d4c.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D3906253E00849FAE127BA12 /* DioF0Estimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75AF4D625C919F777AD8D67D /* DioF0Estimator.swift */; };
-		D92C031A09707F4FC23A36EC /* synthesisrealtime.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF7F66EF6D14EFC08880BC41 /* synthesisrealtime.cpp */; };
 		DA22B48B30E192D11A08F984 /* Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DC8EC688E0F68B2E2FBA20AB /* WorldInApple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */; };
-		DD0F12677A70FBBF830854FA /* synthesis.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1476AFDF0F8B7C9C0650CA06 /* synthesis.cpp */; };
 		EB8DF15E5095A2C93DADBB0F /* WorldInAppleParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */; };
-		ECBAF4992A9D79A67549905B /* codec.h in Headers */ = {isa = PBXBuildFile; fileRef = 50E0CB91CA8D3450B3407490 /* codec.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EE2810A0875BC3DBA1F1F23A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1871681DE89B9C80D6757114 /* LaunchScreen.storyboard */; };
 		EE70CAE44DC02DF9FF1749E6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737EADC5283B96C03A416EA /* AppDelegate.swift */; };
-		F1A1E40F288C0B9CD3454A19 /* synthesis.h in Headers */ = {isa = PBXBuildFile; fileRef = C57462915273C1625951E727 /* synthesis.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7F8800D4D088DB992626F67 /* fft.h in Headers */ = {isa = PBXBuildFile; fileRef = 41BE698282230AFEA669B677 /* fft.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FDD2E796413EEA68BF78224E /* harvest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 2F652CB72E46C28BFABB0B78 /* harvest.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,57 +56,31 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		07292755912A058F1648167B /* d4c.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = d4c.h; sourceTree = "<group>"; };
 		0737EADC5283B96C03A416EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C57892535ECA830FADDD306 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		134104F5581C5BCCF48AC344 /* matlabfunctions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = matlabfunctions.h; sourceTree = "<group>"; };
-		1476AFDF0F8B7C9C0650CA06 /* synthesis.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesis.cpp; sourceTree = "<group>"; };
 		24C0A7218FA586703B7BA023 /* AccelerateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerateUtil.swift; sourceTree = "<group>"; };
 		2AD625F9BA647A2246474290 /* WorldInApple.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WorldInApple.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2F652CB72E46C28BFABB0B78 /* harvest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = harvest.cpp; sourceTree = "<group>"; };
 		2FA8FFF09830E6B4A8EEB1C2 /* WorldInApple.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInApple.swift; sourceTree = "<group>"; };
 		36A888D98F512E403BFC02CD /* AVAudioPCMBuffer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Extension.swift"; sourceTree = "<group>"; };
-		37C1149C591753B85AE1D133 /* WorldInApple.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = WorldInApple.xcconfig; sourceTree = "<group>"; };
-		37ED94AF5430313F3F976BCE /* fft.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = fft.cpp; sourceTree = "<group>"; };
-		41BE698282230AFEA669B677 /* fft.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fft.h; sourceTree = "<group>"; };
 		43E04143D4508F7DB07C0AB5 /* BagotTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BagotTimer.swift; sourceTree = "<group>"; };
-		45B40C26081FFDE76C2A4213 /* harvest.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = harvest.h; sourceTree = "<group>"; };
-		4A39FC34344F3DE1F574BDE5 /* common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
 		4A57D798E194DBC670D0906D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4D85D49B054CFCC62F4ADDCB /* Example_iOS.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Example_iOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		50E0CB91CA8D3450B3407490 /* codec.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = codec.h; sourceTree = "<group>"; };
 		515EFAA2D7B45F8C9AC361C6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		53B600652F9CABB50FA813AF /* ParameterModificator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterModificator.swift; sourceTree = "<group>"; };
 		60DA65901B16F835725880DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		74F581A877837799751CFA11 /* dio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dio.h; sourceTree = "<group>"; };
 		75AF4D625C919F777AD8D67D /* DioF0Estimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DioF0Estimator.swift; sourceTree = "<group>"; };
-		75F82A5F429B8962D1B9EEDC /* macrodefinitions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = macrodefinitions.h; sourceTree = "<group>"; };
-		76AD3E58DAA6FDAF361CE68F /* stonemask.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stonemask.h; sourceTree = "<group>"; };
 		810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		86AABED0577973650E9401C1 /* Charts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Charts.framework; sourceTree = "<group>"; };
 		8A79516F38987F0FCC52869C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8AD331DC4903346A39D96048 /* cheaptrick.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = cheaptrick.cpp; sourceTree = "<group>"; };
 		928A32E92887357F3AF9F93F /* WorldInAppleParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleParameters.swift; sourceTree = "<group>"; };
-		92ACC934307ACD363C892A3A /* dio.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = dio.cpp; sourceTree = "<group>"; };
-		981B7093AE8C30E178ECBF60 /* d4c.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = d4c.cpp; sourceTree = "<group>"; };
 		9CE5A43D72ED172E8C043F9D /* IikanjiEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IikanjiEngine.swift; sourceTree = "<group>"; };
 		A0784CCECCC0D62FE9B31E9A /* WorldInAppleComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleComponents.swift; sourceTree = "<group>"; };
-		A0EC31085589432BFE5ED363 /* common.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = common.cpp; sourceTree = "<group>"; };
 		A535F1EC19D3DB96FBE96FA5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A9A4E5D717A7E2055719E8AA /* stonemask.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = stonemask.cpp; sourceTree = "<group>"; };
 		BE7F7909EB14DD6A3978AE12 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C33D6C235E7AC6DAD9A81D7D /* synthesisrealtime.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = synthesisrealtime.h; sourceTree = "<group>"; };
-		C38E077BA5A7634B50C56B46 /* matlabfunctions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = matlabfunctions.cpp; sourceTree = "<group>"; };
-		C57462915273C1625951E727 /* synthesis.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = synthesis.h; sourceTree = "<group>"; };
-		CF7F66EF6D14EFC08880BC41 /* synthesisrealtime.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = synthesisrealtime.cpp; sourceTree = "<group>"; };
 		D185646EA497EFBECC3C3012 /* WorldInAppleSynthesizer3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldInAppleSynthesizer3.swift; sourceTree = "<group>"; };
 		D1EB741E4ED2174E0FD2EC74 /* SpectralEnvelopeEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpectralEnvelopeEstimator.swift; sourceTree = "<group>"; };
-		E05CFC627AA6F004A8BA0120 /* WorldInApple */ = {isa = PBXFileReference; lastKnownFileType = folder; path = WorldInApple; sourceTree = SOURCE_ROOT; };
 		EF4200BF671D0D4CE4DBFC00 /* AperiodicityEstimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AperiodicityEstimator.swift; sourceTree = "<group>"; };
 		F0D65FFD1DC5530BDE80268F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F0E6BA12251752B35136DFE9 /* cheaptrick.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = cheaptrick.h; sourceTree = "<group>"; };
-		FA09DAFE9CD0FC9031E23CB7 /* constantnumbers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constantnumbers.h; sourceTree = "<group>"; };
-		FBECB1679649679E8CB24919 /* codec.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = codec.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,26 +152,6 @@
 			path = Example/iOS;
 			sourceTree = "<group>";
 		};
-		6334E2E3048876E0E95BF88E /* world */ = {
-			isa = PBXGroup;
-			children = (
-				F0E6BA12251752B35136DFE9 /* cheaptrick.h */,
-				50E0CB91CA8D3450B3407490 /* codec.h */,
-				4A39FC34344F3DE1F574BDE5 /* common.h */,
-				FA09DAFE9CD0FC9031E23CB7 /* constantnumbers.h */,
-				07292755912A058F1648167B /* d4c.h */,
-				74F581A877837799751CFA11 /* dio.h */,
-				41BE698282230AFEA669B677 /* fft.h */,
-				45B40C26081FFDE76C2A4213 /* harvest.h */,
-				75F82A5F429B8962D1B9EEDC /* macrodefinitions.h */,
-				134104F5581C5BCCF48AC344 /* matlabfunctions.h */,
-				76AD3E58DAA6FDAF361CE68F /* stonemask.h */,
-				C57462915273C1625951E727 /* synthesis.h */,
-				C33D6C235E7AC6DAD9A81D7D /* synthesisrealtime.h */,
-			);
-			path = world;
-			sourceTree = "<group>";
-		};
 		6C79C5ABF8F4F620DE48F3E4 /* Utls */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,40 +162,11 @@
 			path = Utls;
 			sourceTree = "<group>";
 		};
-		8AF5D98C12B16DE5D9051E14 /* World */ = {
-			isa = PBXGroup;
-			children = (
-				9B0369D6D37B86CE62507745 /* WorldInApple */,
-			);
-			path = World;
-			sourceTree = "<group>";
-		};
-		9B0369D6D37B86CE62507745 /* WorldInApple */ = {
-			isa = PBXGroup;
-			children = (
-				8AD331DC4903346A39D96048 /* cheaptrick.cpp */,
-				FBECB1679649679E8CB24919 /* codec.cpp */,
-				A0EC31085589432BFE5ED363 /* common.cpp */,
-				981B7093AE8C30E178ECBF60 /* d4c.cpp */,
-				92ACC934307ACD363C892A3A /* dio.cpp */,
-				37ED94AF5430313F3F976BCE /* fft.cpp */,
-				2F652CB72E46C28BFABB0B78 /* harvest.cpp */,
-				C38E077BA5A7634B50C56B46 /* matlabfunctions.cpp */,
-				A9A4E5D717A7E2055719E8AA /* stonemask.cpp */,
-				1476AFDF0F8B7C9C0650CA06 /* synthesis.cpp */,
-				CF7F66EF6D14EFC08880BC41 /* synthesisrealtime.cpp */,
-				6334E2E3048876E0E95BF88E /* world */,
-			);
-			name = WorldInApple;
-			path = src;
-			sourceTree = "<group>";
-		};
 		9D51D6F3CAB0EB5300BDED54 /* WorldInApple */ = {
 			isa = PBXGroup;
 			children = (
 				810B3BBC4A84A1CDEAE950FC /* Bridging-Header.h */,
 				BE7F7909EB14DD6A3978AE12 /* Info.plist */,
-				37C1149C591753B85AE1D133 /* WorldInApple.xcconfig */,
 				2B94102FA4A3E5FAC5AD91E5 /* Utils */,
 				12B018DC676B130324918310 /* WorldInApple */,
 			);
@@ -302,9 +203,7 @@
 		FCDB70EB1CE4A405B29551CD = {
 			isa = PBXGroup;
 			children = (
-				E05CFC627AA6F004A8BA0120 /* WorldInApple */,
 				313253CDA2A92EA71F00E4C5 /* iOS */,
-				8AF5D98C12B16DE5D9051E14 /* World */,
 				9D51D6F3CAB0EB5300BDED54 /* WorldInApple */,
 				E71101536E5A18D9CF5C934C /* Frameworks */,
 				B630494FF4FAAE46FC0673B1 /* Products */,
@@ -319,19 +218,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA22B48B30E192D11A08F984 /* Bridging-Header.h in Headers */,
-				9ADB8BDC55C4650871CCCD7C /* cheaptrick.h in Headers */,
-				ECBAF4992A9D79A67549905B /* codec.h in Headers */,
-				55E89154B44D833280AA692B /* common.h in Headers */,
-				4BA45F0AC6AE9DB5967A87AA /* constantnumbers.h in Headers */,
-				CFC6051F4CD4E773D7DEBB50 /* d4c.h in Headers */,
-				1C9FE597111544232C48F704 /* dio.h in Headers */,
-				F7F8800D4D088DB992626F67 /* fft.h in Headers */,
-				885E9E2F507BFEC87E305BBA /* harvest.h in Headers */,
-				8755C2352B7D628744A5E9FA /* macrodefinitions.h in Headers */,
-				0C0F59A31E06A2BC0E9AF269 /* matlabfunctions.h in Headers */,
-				32FA4ABC85691608F484D0FB /* stonemask.h in Headers */,
-				F1A1E40F288C0B9CD3454A19 /* synthesis.h in Headers */,
-				BA83B57E59F203E0D2184110 /* synthesisrealtime.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -458,17 +344,6 @@
 				68AD66BC4848C1F6FCFE6D0A /* WorldInAppleComponents.swift in Sources */,
 				EB8DF15E5095A2C93DADBB0F /* WorldInAppleParameters.swift in Sources */,
 				47AC6E7034FBE725B0A2251E /* WorldInAppleSynthesizer3.swift in Sources */,
-				CE26A9310A6D6F5394EC0CAA /* cheaptrick.cpp in Sources */,
-				A75A59ABBCC085F70C132DBF /* codec.cpp in Sources */,
-				40742B3B9CB6219AD3BB05BD /* common.cpp in Sources */,
-				149A68355DB0FFEB15C3768C /* d4c.cpp in Sources */,
-				A8B4B1023A13EADDAB398163 /* dio.cpp in Sources */,
-				9FF826EB9F1C45D7D5067CA8 /* fft.cpp in Sources */,
-				FDD2E796413EEA68BF78224E /* harvest.cpp in Sources */,
-				8DA58C202634385648A1D892 /* matlabfunctions.cpp in Sources */,
-				9B10AD68D33A969963031DFF /* stonemask.cpp in Sources */,
-				DD0F12677A70FBBF830854FA /* synthesis.cpp in Sources */,
-				D92C031A09707F4FC23A36EC /* synthesisrealtime.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
