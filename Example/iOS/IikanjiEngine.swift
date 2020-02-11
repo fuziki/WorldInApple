@@ -55,21 +55,59 @@ public class IikanjiEngine {
             p.filterType = .parametric
             p.bandwidth = 1
         }
+
+        try! engine.inputNode.setVoiceProcessingEnabled(true)
+//        engine.inputNode.isVoiceProcessingAGCEnabled = true
+//        engine.inputNode.isVoiceProcessingBypassed = false
+        
+        
+        var turnOff: UInt32 = 0
+        var turnOn: UInt32 = 1 // use this if you want to enable properties
+        var err = AudioUnitSetProperty(engine.inputNode.audioUnit!,
+                                   kAUVoiceIOProperty_BypassVoiceProcessing,
+                                   kAudioUnitScope_Global,
+                                   1,
+                                   &turnOff,
+                                   UInt32(MemoryLayout.size(ofValue: turnOff)))
+
+        if err != noErr {
+          print("[ERROR] Unable to disable bypass voice processing")
+          return
+        }
+
+        err = AudioUnitSetProperty(engine.inputNode.audioUnit!,
+                                   kAUVoiceIOProperty_VoiceProcessingEnableAGC,
+                                   kAudioUnitScope_Global,
+                                   0,
+                                   &turnOn,
+                                   UInt32(MemoryLayout.size(ofValue: turnOn)))
+
+        if err != noErr {
+          print("[ERROR] Unable to disable AGC")
+          return
+        }
+        
+        
+//        try! engine.outputNode.setVoiceProcessingEnabled(true)
+
         
         let nodes: [AVAudioNode] = [
             player,
-            reverb,
-            delay,
+//            reverb,
+//            delay,
             eq,
             tapMixer2,
             
-            monoMixer,
-            tapMixer,
-            muteMixer,
+//            monoMixer,
+//            tapMixer,
+//            muteMixer,
         ]
         for node in nodes {
             engine.attach(node)
         }
+        
+//        engine.inputNode.isVoiceProcessingInputMuted = false
+//        engine.inputNode.setManualRenderingInputPCMFormat(<#T##format: AVAudioFormat##AVAudioFormat#>, inputBlock: AVA)
         
 //        reverb.loadFactoryPreset(.mediumRoom)
 //        reverb.wetDryMix = 10
@@ -85,11 +123,11 @@ public class IikanjiEngine {
 //        engine.connect(player, to:tapMixer2, format: interFormat)
 //        engine.connect(tapMixer2, to: engine.mainMixerNode, format: interFormat)
 
-        engine.connect(engine.inputNode, to: monoMixer, format: engine.inputNode.outputFormat(forBus: 0))
+//        engine.connect(engine.inputNode, to: monoMixer, format: engine.inputNode.outputFormat(forBus: 0))
 //        engine.connect(monoMixer, to: eq, format: interFormat)
-        engine.connect(monoMixer, to: tapMixer, format: interFormat)
-        engine.connect(tapMixer, to: muteMixer, format: interFormat)
-        engine.connect(muteMixer, to: engine.mainMixerNode, format: interFormat)
+//        engine.connect(monoMixer, to: tapMixer, format: interFormat)
+//        engine.connect(tapMixer, to: muteMixer, format: interFormat)
+//        engine.connect(muteMixer, to: engine.mainMixerNode, format: interFormat)
 
         
         engine.connect(player, to: eq, format: interFormat)
@@ -100,17 +138,21 @@ public class IikanjiEngine {
 //        engine.connect(monoMixer, to: tapMixer, format: interFormat)
 //        engine.connect(tapMixer, to: muteMixer, format: interFormat)
 //        engine.connect(muteMixer, to: engine.mainMixerNode, format: interFormat)
-        muteMixer.volume = 0
+//        muteMixer.volume = 0
         
-        tapMixer.installTap(onBus: 0, bufferSize: 19200, format: interFormat, block: { [weak self] (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
+        engine.inputNode.installTap(onBus: 0, bufferSize: 19200, format: engine.inputNode.inputFormat(forBus: 0), block: { [weak self] (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
+            print("on Buff: \(String(describing: self?.timer.timeSec))")
+            if buffer.audioBufferList.pointee.mBuffers.mData == nil {
+                print("error mData is nil")
+            }
             self?.onAudio(buffer: buffer)
         })
         
         tapMixer2.installTap(onBus: 0, bufferSize: 4800, format: interFormat, block: { [weak self] (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
             let arr: [Float] = buffer.audioBufferList.pointee.mBuffers.convertFloatArray()
-            
+
             var fftResult: DSPSplitComplex = AccelerateUtil.fft(arr)
-            
+
             var fftResult_amplitude = [Float](repeating: 0, count: Int(arr.count / 2))
             vDSP_zvabs(&fftResult, 1, &fftResult_amplitude, 1, vDSP_Length(arr.count / 2))
             self?.scheduleAudioHandler?(fftResult_amplitude)
@@ -118,6 +160,8 @@ public class IikanjiEngine {
         
         engine.prepare()
     }
+    
+    let timer = BagotTimer()
     
     public func start() {
         try! engine.start()
@@ -136,8 +180,16 @@ public class IikanjiEngine {
             return
         }
         
-        player.scheduleBuffer(conv, completionHandler: nil)
+        playingBuff.append(conv)
+        if playingBuff.count > 10 {
+            playingBuff.removeFirst()
+        }
+        player.scheduleBuffer(conv, completionHandler: {
+            print("played buff!")
+        })
     }
+    
+    private var playingBuff: [AVAudioPCMBuffer] = []
     
     public func update(eqValue: [Float]) {
         for i in 0..<min(eqValue.count, eq.bands.count) {
@@ -178,5 +230,14 @@ extension AudioBuffer {
         } else {
             return [Float]()
         }
+    }
+}
+
+public class BagotTimer {
+    @inlinable var timeSec: Double {
+        var tb = mach_timebase_info()
+        mach_timebase_info(&tb)
+        let tsc = mach_absolute_time()
+        return Double(tsc) * Double(tb.numer) / Double(tb.denom) / 1000000000.0
     }
 }

@@ -38,15 +38,22 @@ class ViewController: UIViewController {
     let worldInApple = WorldInApple(fs: 48000, frame_period: 5, x_length: 38400)
     
     private var oldBuff: AVAudioPCMBuffer? = nil
+    private var playingBuff: AVAudioPCMBuffer? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        NotificationCenter.default.addObserver(self,
+//                                               selector: #selector(self.handleInterruption(_:)),
+//                                               name: AVAudioSession.interruptionNotification,
+//                                               object: AVAudioSession.sharedInstance())
+
 
         let session = AVAudioSession.sharedInstance()
-        try! session.setCategory( .playAndRecord, mode: .default, options: [.allowBluetoothA2DP, .allowBluetooth])
-        try! AVAudioSession.sharedInstance().setPreferredSampleRate(Double(fs))
+        try! session.setCategory(.playAndRecord, mode: .voiceChat, options: [.allowBluetoothA2DP, .allowBluetooth])
+        try! AVAudioSession.sharedInstance().setPreferredSampleRate(Double(48000))
         try! session.setActive(true)
-        
+
         chartView.chartDescription?.text = ""
         chartView.legend.enabled = false
         chartView.leftAxis.axisMaximum =  2.2
@@ -63,7 +70,7 @@ class ViewController: UIViewController {
         
         for _ in 0..<10 {
             let slider = UISlider()
-            slider.minimumValue = -48
+            slider.minimumValue = -96
             slider.maximumValue = 24
             slider.addTarget(self, action: #selector(self.onUpdateEQ(_:)), for: .valueChanged)
             slider.frame.size.width = sliderStack.frame.size.width
@@ -71,33 +78,43 @@ class ViewController: UIViewController {
             sliders.append(slider)
         }
 
-        
+        self.setupIikanji()
+    }
+    
+    let lockQueue2 = DispatchQueue(label: "factory.fuziki.lockQueue2")
+
+    private func setupIikanji() {
+
         iikanji = IikanjiEngine()
         iikanji.convTapAudio(handler: { [weak self] (buffer: AVAudioPCMBuffer) in
 //            self?.onAudio(buffer: buffer)
             
-            guard let old = self?.oldBuff else {
-                self?.oldBuff = buffer
-                return
-            }
-            self?.onAudio(buffer: (old + buffer)!)
-            self?.oldBuff = nil
+            self?.lockQueue2.async(execute: { [weak self] in
+                guard let old = self?.oldBuff else {
+                    self?.oldBuff = buffer
+                    return
+                }
+                let playing = (old + buffer)!
+                self?.playingBuff = playing
+                self?.onAudio(buffer: playing)
+                self?.oldBuff = nil
+            })
         })
         
-        iikanji.scheduleAudio(handler: { [weak self] (arr: [Float]) in
-            DispatchQueue.main.async { [weak self] in
-                func makeDataSet(_ floatArr: [Float]) -> LineChartDataSet {
-                    var entry = [ChartDataEntry]()
-                    for (i, d) in floatArr.enumerated() {
-                        entry.append(ChartDataEntry(x: Double(i), y: Double(d)))
-                    }
-                    let dataSet = LineChartDataSet(entries: entry, label: "data")
-                    dataSet.drawCirclesEnabled = false
-                    return dataSet
-                }
-                self?.chartView.data = LineChartData(dataSet: makeDataSet(arr))
-            }
-        })
+//        iikanji.scheduleAudio(handler: { [weak self] (arr: [Float]) in
+//            DispatchQueue.main.async { [weak self] in
+//                func makeDataSet(_ floatArr: [Float]) -> LineChartDataSet {
+//                    var entry = [ChartDataEntry]()
+//                    for (i, d) in floatArr.enumerated() {
+//                        entry.append(ChartDataEntry(x: Double(i), y: Double(d)))
+//                    }
+//                    let dataSet = LineChartDataSet(entries: entry, label: "data")
+//                    dataSet.drawCirclesEnabled = false
+//                    return dataSet
+//                }
+//                self?.chartView.data = LineChartData(dataSet: makeDataSet(arr))
+//            }
+//        })
         
         iikanji.start()
     }
@@ -119,4 +136,43 @@ class ViewController: UIViewController {
         iikanji.update(eqValue: value)
     }
     
+//    @objc
+//    func handleInterruption(_ notification: Notification) {
+//        guard let userInfo = notification.userInfo,
+//            let typeValue = userInfo[AVAudioSessionInterruptionTypeKey] as? UInt,
+//            let type = AVAudioSession.InterruptionType(rawValue: typeValue) else { return }
+//
+//        switch type {
+//        case .began:
+//            // Interruption began, take appropriate actions
+//            break
+//
+////            if let isRecording = audioEngine?.isRecording, isRecording {
+////                recordButton.setTitle(ButtonTitles.record.rawValue, for: .normal)
+////            }
+////            audioEngine?.stopRecordingAndPlayers()
+////
+////            fxSwitch.setOn(false, animated: true)
+////            speechSwitch.setOn(false, animated: true)
+////            playButton.setTitle(ButtonTitles.record.rawValue, for: .normal)
+////            playButton.isEnabled = false
+//        case .ended:
+//            do {
+//                try AVAudioSession.sharedInstance().setActive(true)
+//            } catch {
+//                print("Could not set audio session active: \(error)")
+//            }
+//
+//            if let optionsValue = userInfo[AVAudioSessionInterruptionOptionKey] as? UInt {
+//                let options = AVAudioSession.InterruptionOptions(rawValue: optionsValue)
+//                if options.contains(.shouldResume) {
+//                    // Interruption Ended - playback should resume
+//                } else {
+//                    // Interruption Ended - playback should NOT resume
+//                }
+//            }
+//        @unknown default:
+//            fatalError("Unknown type: \(type)")
+//        }
+//    }
 }
