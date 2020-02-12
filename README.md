@@ -1,5 +1,5 @@
 # WorldInApple
-![Platform](https://img.shields.io/badge/platform-%20iOS%20%7C%20macOS%20-lightgrey.svg)
+![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/swift-green.svg)
 ![Xode](https://img.shields.io/badge/xcode-xcode11-green.svg)
 
@@ -39,3 +39,8 @@ shit pitch and formant
 ```swift
 let result = worldInApple.conv(buffer: buffer)
 ```
+
+# feature
+
+- [ ] support Carthage
+- [ ] support macOS
