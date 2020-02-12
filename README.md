@@ -42,5 +42,5 @@ let result = worldInApple.conv(buffer: buffer)
 
 # feature
 
-- [] support Carthage
-- [] support macOS
+- [ ] support Carthage
+- [ ] support macOS
