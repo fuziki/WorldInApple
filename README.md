@@ -6,13 +6,22 @@
 Swift wrapper for vocoder World(https://github.com/mmorise/World)  
 Support iOS & macOS  
 
+# Required
+
+* git
+* carthage
+* (optional) xcodegen
+
 # Install
 
 ```
 git clone --recurse-submodules https://github.com/fuziki/WorldInApple
+carthage update --platform iOS
 ```
 
-# Make WorldInApple.xcodeproj
+## (Optional)Make WorldInApple.xcodeproj
+
+no need to generate. because .xcodeproj file is managed by git.
 
 ```
 xcodegen generate
@@ -40,7 +49,7 @@ shit pitch and formant
 let result = worldInApple.conv(buffer: buffer)
 ```
 
-# feature
+# Feature
 
 - [ ] support Carthage
 - [ ] support macOS
