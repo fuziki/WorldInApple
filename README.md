@@ -51,8 +51,10 @@ let result = worldInApple.conv(buffer: buffer)
 ```
 
 # Installation
-## 
-
+## Carthage
+```
+github "fuziki/WorldInApple"
+```
 
 # Feature
 
