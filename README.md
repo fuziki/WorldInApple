@@ -12,11 +12,12 @@ Support iOS & macOS
 * carthage
 * (optional) xcodegen
 
-# Install
+# Play iOS Example
 
 ```
 git clone --recurse-submodules https://github.com/fuziki/WorldInApple
 carthage update --platform iOS
+open WorldInApple.xcodeproj
 ```
 
 ## (Optional)Make WorldInApple.xcodeproj
@@ -49,7 +50,13 @@ shit pitch and formant
 let result = worldInApple.conv(buffer: buffer)
 ```
 
+# Installation
+## 
+
+
 # Feature
 
-- [ ] support Carthage
+- [x] support Carthage
 - [ ] support macOS
+- [] support cocopads
+- [] support Swift Package Manager
