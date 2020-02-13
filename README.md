@@ -16,8 +16,10 @@ Support iOS & macOS
 
 ```
 git clone --recurse-submodules https://github.com/fuziki/WorldInApple
+cd Examples/Example-iOS/
 carthage update --platform iOS
-open WorldInApple.xcodeproj
+cd ../../
+open WorldInApple.xcworkspace
 ```
 
 ## (Optional)Make WorldInApple.xcodeproj
