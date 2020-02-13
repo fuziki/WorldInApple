@@ -62,5 +62,5 @@ github "fuziki/WorldInApple"
 
 - [x] support Carthage
 - [ ] support macOS
-- [] support cocopads
-- [] support Swift Package Manager
+- [ ] support cocopads
+- [ ] support Swift Package Manager
