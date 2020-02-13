@@ -23,23 +23,21 @@ targets:
         group: World/src
         createIntermediateGroups: true
 
-
-
-  Example_iOS:
-    type: application
-    platform: iOS
-    deploymentTarget: 13.0
-
-    settings:
-      INFOPLIST_FILE: Example/iOS/info.plist
-      PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.example2
-      SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/Example/iOS/Bridging-Header.h
-
-    sources:
-      - path: Example/iOS
-        name: iOS
-        group: Example/iOS
-
-    dependencies:
-      - target: WorldInApple
-      - carthage: Charts
+#  Example_iOS:
+#    type: application
+#    platform: iOS
+#    deploymentTarget: 13.0
+#
+#    settings:
+#      INFOPLIST_FILE: Example/iOS/info.plist
+#      PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.example2
+#      SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/Example/iOS/Bridging-Header.h
+#
+#    sources:
+#      - path: Example/iOS
+#        name: iOS
+#        group: Example/iOS
+#
+#    dependencies:
+#      - target: WorldInApple
+#      - carthage: Charts
