@@ -12,6 +12,21 @@ Support iOS & macOS
 * carthage
 * (optional) xcodegen
 
+# Projects
+## WorldInApple
+
+* swift wrapper for iOS
+  * fature support : macOS
+* example: WorldInApple.xcworkspace
+* use Carthage to install your app
+
+## WorldInApplePluging
+
+* Unity Asset for vocoder world
+* support macOS Editor
+  * feature support: iOS Build
+* example: UnityPlugin/Unity/WorldInApple
+* use WorldInApplePluging.unitypackage to install your app
 # Play iOS Example
 
 ```
