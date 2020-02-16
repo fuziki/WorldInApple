@@ -2,16 +2,36 @@
 ![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/swift-green.svg)
 ![Xode](https://img.shields.io/badge/xcode-xcode11-green.svg)
+![Unity](https://img.shields.io/badge/unity-2018.3-lightblue.svg)
 
 Swift wrapper for vocoder World(https://github.com/mmorise/World)  
-Support iOS & macOS  
 
+* Swift wrapper
+  * Support iOS
+* Unity Asset (Unity Native Plugin)
+  * Support macOS Editor
+  
 # Required
 
 * git
 * carthage
 * (optional) xcodegen
 
+# Projects
+## WorldInApple
+
+* swift wrapper for iOS
+  * fature support : macOS
+* example: WorldInApple.xcworkspace
+* use Carthage to install your app
+
+## WorldInApplePluging
+
+* Unity Asset for vocoder world
+* support macOS Editor
+  * feature support: iOS Build
+* example: UnityPlugin/Unity/WorldInApple
+* use WorldInApplePluging.unitypackage to install your app
 # Play iOS Example
 
 ```
