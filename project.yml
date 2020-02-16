@@ -5,23 +5,51 @@ targets:
     type: framework
     platform: iOS
     deploymentTarget: 11.0
-
     settings:
       INFOPLIST_FILE: WorldInApple/info.plist
       PRODUCT_BUNDLE_IDENTIFIER: factory.fuziki.framework.ios
       SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/WorldInApple/Bridging-Header.h
       USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/World/src
-
     sources:
       - path: WorldInApple
         name: WorldInApple
         group: WorldInApple
-        createIntermediateGroups: true
-        
+        createIntermediateGroups: true      
       - path: World/src
         name: src
         group: World/src
         createIntermediateGroups: true
+
+  WorldInAppleMacPlugin:
+    type: bundle
+    platform: macOS
+    deploymentTarget: 10.14
+    configFiles:
+      Debug: UnityPlugin/Xcode/Platforms/macOS/Bundle/macOS.xcconfig
+      Release: UnityPlugin/Xcode/Platforms/macOS/Bundle/macOS.xcconfig
+    settings:
+      PRODUCT_NAME: $(OUTPUT_UNIQUE_NAME)
+      INFOPLIST_FILE: UnityPlugin/Xcode/Platforms/macOS/Bundle/info.plist
+#      SWIFT_OBJC_BRIDGING_HEADER: ${PROJECT_DIR}/WorldInApple/Bridging-Header.h
+      USER_HEADER_SEARCH_PATHS: ${PROJECT_DIR}/World/src
+    sources:
+      - path: UnityPlugin/Xcode/Sources
+        name: Sources
+        group: UnityPlugin/Xcode/Sources
+        createIntermediateGroups: true        
+      - path: UnityPlugin/Xcode/Platforms/macOS/Bundle
+        name: Bundle
+        group: UnityPlugin/Xcode/Platforms/macOS
+        createIntermediateGroups: true
+        excludes:
+          - "*.cs"
+          - "cs_maker/**"
+          - "rs/**"
+      - path: World/src
+        name: src
+        group: World/src
+        createIntermediateGroups: true
+
 
 #  Example_iOS:
 #    type: application
