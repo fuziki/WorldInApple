@@ -2,10 +2,15 @@
 ![Platform](https://img.shields.io/badge/platform-%20iOS%20-lightgrey.svg)
 ![Swift](https://img.shields.io/badge/swift-green.svg)
 ![Xode](https://img.shields.io/badge/xcode-xcode11-green.svg)
+![Unity](https://img.shields.io/badge/unity-2018.3-lightblue.svg)
 
 Swift wrapper for vocoder World(https://github.com/mmorise/World)  
-Support iOS & macOS  
 
+* Swift wrapper
+  * Support iOS
+* Unity Asset (Unity Native Plugin)
+  * Support macOS Editor
+  
 # Required
 
 * git
