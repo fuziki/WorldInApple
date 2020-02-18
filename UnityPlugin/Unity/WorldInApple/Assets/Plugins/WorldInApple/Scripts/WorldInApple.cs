@@ -22,6 +22,36 @@ namespace WorldInApplePlugin {
         }
     }
 
+    public class AllocableArray
+    {
+        private double[] array_1 = null;
+        private double[][] array_2 = null;
+        private GCHandle allocedArray;
+        public AllocableArray(int size_1, int size_2 = -1)
+        {
+            if (size_2 == -1)
+            {
+                array_1 = new double[size_1];
+                allocedArray = GCHandle.Alloc(array_1, GCHandleType.Pinned);
+            }
+            else
+            {
+                array_2 = new double[size_1][];
+                for (int i = 0; i < array_2.Length; i++)
+                    array_2[i] = new double[size_2];
+                allocedArray = GCHandle.Alloc(array_2, GCHandleType.Pinned);
+            }
+        }
+
+        public IntPtr ArrayPtr
+        { get { return allocedArray.AddrOfPinnedObject(); } }
+
+        ~AllocableArray()
+        {
+            allocedArray.Free();
+        }
+    }
+
     public class Parameters
     {
         private const string dllName = Configs.DllName;
@@ -45,11 +75,11 @@ namespace WorldInApplePlugin {
         public readonly int f0_length;
         public readonly int fft_size;
 
-        private double[] tmp_f0;
-        private double[] f0;
-        private double[] time_axis;
-        private double[][] spectrogram;
-        private double[][] aperiodicity;
+        private AllocableArray tmp_f0;
+        private AllocableArray f0;
+        private AllocableArray time_axis;
+        private AllocableArray spectrogram;
+        private AllocableArray aperiodicity;
 
         public Parameters(int fs, double frame_period, int x_length)
         {
@@ -59,21 +89,16 @@ namespace WorldInApplePlugin {
 
             this.f0_length = GetSamplesForDIO(fs, x_length, frame_period);
 
-            this.time_axis = new double[f0_length];
-            this.f0 = new double[f0_length];
-            this.tmp_f0 = new double[f0_length];
+            this.time_axis = new AllocableArray(f0_length);
+            this.f0 = new AllocableArray(f0_length);
+            this.tmp_f0 = new AllocableArray(f0_length);
 
             var cheapTrickOption = make_CheapTrickOption(fs);
             this.fft_size = GetFFTSizeForCheapTrick(fs, cheapTrickOption);
             destroy_CheapTrickOption(cheapTrickOption);
 
-            this.spectrogram = new double[f0_length][];
-            this.aperiodicity = new double[f0_length][];
-            for (int i = 0; i < f0_length; i++)
-            {
-                spectrogram[i] = new double[fft_size / 2 + 1];
-                aperiodicity[i] = new double[fft_size / 2 + 1];
-            }
+            this.spectrogram = new AllocableArray(f0_length, fft_size / 2 + 1);
+            this.aperiodicity = new AllocableArray(f0_length, fft_size / 2 + 1);
         }
     }
 
