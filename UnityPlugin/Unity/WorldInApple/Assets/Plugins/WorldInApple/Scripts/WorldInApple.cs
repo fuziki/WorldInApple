@@ -24,10 +24,56 @@ namespace WorldInApplePlugin {
 
     public class Parameters
     {
-        public double frame_period = 5;
+        private const string dllName = Configs.DllName;
+
+        [DllImport(dllName)]
+        private static extern int GetSamplesForDIO(int fs, int x_length, double frame_period);
+
+        [DllImport(dllName)]
+        private static extern int GetFFTSizeForCheapTrick(int fs, IntPtr cheapTrickOption);
+
+        [DllImport(dllName)]
+        private static extern IntPtr make_CheapTrickOption(int fs); //tmp
+
+        [DllImport(dllName)]
+        private static extern void destroy_CheapTrickOption(IntPtr option); //tmp
+
+        public readonly int fs;
+        public readonly double frame_period;
+        public readonly int x_length;
+
+        public readonly int f0_length;
+        public readonly int fft_size;
+
+        private double[] tmp_f0;
+        private double[] f0;
+        private double[] time_axis;
+        private double[][] spectrogram;
+        private double[][] aperiodicity;
+
         public Parameters(int fs, double frame_period, int x_length)
         {
+            this.fs = fs;
             this.frame_period = frame_period;
+            this.x_length = x_length;
+
+            this.f0_length = GetSamplesForDIO(fs, x_length, frame_period);
+
+            this.time_axis = new double[f0_length];
+            this.f0 = new double[f0_length];
+            this.tmp_f0 = new double[f0_length];
+
+            var cheapTrickOption = make_CheapTrickOption(fs);
+            this.fft_size = GetFFTSizeForCheapTrick(fs, cheapTrickOption);
+            destroy_CheapTrickOption(cheapTrickOption);
+
+            this.spectrogram = new double[f0_length][];
+            this.aperiodicity = new double[f0_length][];
+            for (int i = 0; i < f0_length; i++)
+            {
+                spectrogram[i] = new double[fft_size / 2 + 1];
+                aperiodicity[i] = new double[fft_size / 2 + 1];
+            }
         }
     }
 
