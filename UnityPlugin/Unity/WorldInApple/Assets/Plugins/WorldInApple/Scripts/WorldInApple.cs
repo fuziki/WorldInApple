@@ -174,4 +174,40 @@ namespace WorldInApplePlugin {
             StoneMask(parameters.x, parameters.x_length, parameters.fs, parameters.time_axis, parameters.tmp_f0, parameters.f0_length, parameters.f0);
         }
     }
+
+    public class SpectralEnvelopeEstimator
+    {
+        private const string dllName = Configs.DllName;
+
+        [DllImport(dllName)]
+        private static extern IntPtr make_CheapTrickOption(int fs);
+
+        [DllImport(dllName)]
+        private static extern void destroy_CheapTrickOption(IntPtr option);
+
+        [DllImport(dllName)]
+        private static extern void CheapTrick(IntPtr x, int x_length, int fs, IntPtr temporal_positions, IntPtr f0, int f0_length, IntPtr option, IntPtr spectrogram);
+
+        private IntPtr option;
+        private Parameters parameters;
+
+        public SpectralEnvelopeEstimator(Parameters parameters)
+        {
+            this.parameters = parameters;
+            option = make_CheapTrickOption(parameters.fs);
+        }
+
+        ~SpectralEnvelopeEstimator()
+        {
+            this.parameters = null;
+            destroy_CheapTrickOption(option);
+        }
+
+        public void EstimateSpectral()
+        {
+            CheapTrick(parameters.x, parameters.x_length, parameters.fs, parameters.time_axis, parameters.f0, parameters.f0_length, option, parameters.spectrogram);
+        }
+    }
+
+
 }
