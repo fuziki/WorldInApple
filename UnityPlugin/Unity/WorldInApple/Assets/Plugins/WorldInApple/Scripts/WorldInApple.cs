@@ -209,5 +209,39 @@ namespace WorldInApplePlugin {
         }
     }
 
+    public class AperiodicityEstimator
+    {
+        private const string dllName = Configs.DllName;
+
+        [DllImport(dllName)]
+        private static extern IntPtr make_D4COption(double threshold);
+
+        [DllImport(dllName)]
+        private static extern void destroy_D4COption(IntPtr option);
+
+        [DllImport(dllName)]
+        private static extern void D4C(IntPtr x, int x_length, int fs, IntPtr temporal_positions, IntPtr f0, int f0_length, int fft_size, IntPtr option, IntPtr aperiodicity);
+
+        private IntPtr option;
+        private Parameters parameters;
+
+        public AperiodicityEstimator(Parameters parameters)
+        {
+            this.parameters = parameters;
+            option = make_D4COption(parameters.fs);
+        }
+
+        ~AperiodicityEstimator()
+        {
+            this.parameters = null;
+            destroy_D4COption(option);
+        }
+
+        public void EstimateSpectral()
+        {
+            D4C(parameters.x, parameters.x_length, parameters.fs, parameters.time_axis, parameters.f0, parameters.f0_length, parameters.fft_size, option, parameters.aperiodicity);
+        }
+    }
+
 
 }
