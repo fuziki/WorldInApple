@@ -5,7 +5,105 @@ using System.Runtime.InteropServices;
 using System;
 
 [RequireComponent(typeof(AudioSource))]
-public class Mic : MonoBehaviour {
+public class Mic2 : MonoBehaviour {
+
+    [SerializeField]
+    [Range(0.5f, 2f)]
+    private float pitch = 1;
+
+    private int x_length = 10240;
+    private double frame_period = 5;
+    private int fs = 48000;
+
+    List<float[]> micBuffer = new List<float[]>();
+    List<float[]> playableBuffer = new List<float[]>();
+
+    private double[] x;
+
+    private WorldInApplePlugin.WorldInApple worldInApple;
+
+    // Use this for initialization
+    void Awake()
+    {
+        x = new double[x_length];
+        worldInApple = new WorldInApplePlugin.WorldInApple(fs, frame_period, x_length);
+    }
+
+    void Start()
+    {
+        var audio = GetComponent<AudioSource>();
+        audio.clip = Microphone.Start(null, true, 1, fs);
+        audio.loop = true;
+        while (Microphone.GetPosition(null) <= 0) { }
+        audio.Play();
+    }
+
+    // Update is called once per frame
+    void Update() 
+    {
+        worldInApple.parameterModificator.pitch = pitch;
+
+        if (micBuffer.Count < 12) return;
+
+        for (int i = 0; i < 10; i++)
+        {
+            for (int j = 0; j < 1024; j++)
+            {
+                x[i * 1024 + j] = micBuffer[i][j];
+            }
+        }
+        micBuffer.RemoveRange(0, 10);
+
+        var y = worldInApple.conv(x);
+
+        for (int i = 0; i < 10; i++)
+        {
+            var buff = new float[1024];
+            for (int j = 0; j < 1024; j++)
+            {
+                buff[j] = (float)y[1024 * i + j];
+            }
+            playableBuffer.Add(buff);
+        }
+
+    }
+
+    void OnAudioFilterRead(float[] data, int channels)
+    {
+
+        var queue = new float[1024];
+        for (int i = 0; i < queue.Length; i++)
+        {
+            queue[i] = data[i * 2];
+        }
+        micBuffer.Add(queue);
+
+        if(playableBuffer.Count == 0)
+        {
+            for (int i = 0; i < data.Length; i++)
+                data[i] = 0;
+            return;
+        }
+        var play = playableBuffer[0];
+        playableBuffer.RemoveAt(0);
+
+        for(int i = 0; i < play.Length; i++)
+        {
+            data[i * 2] = play[i];
+            data[i * 2 + 1] = play[i];
+        }
+    }
+
+    void OnDestroy()
+    {
+        worldInApple.Dispose();
+    }
+}
+
+
+[RequireComponent(typeof(AudioSource))]
+public class Mic : MonoBehaviour
+{
 
     [SerializeField]
     [Range(0.5f, 2f)]
@@ -91,7 +189,8 @@ public class Mic : MonoBehaviour {
 
 
     // Use this for initialization
-    void Awake () {
+    void Awake()
+    {
 
 
         //int b = add_two(32);
@@ -114,7 +213,7 @@ public class Mic : MonoBehaviour {
         Debug.Log("f0_length: " + f0_length + ", fft_size: " + fft_size);
 
         //spectrogram = new double[f0_length, fft_size / 2 + 1];
-        spectrogram  = new double[f0_length][];
+        spectrogram = new double[f0_length][];
         for (int i = 0; i < spectrogram.Length; i++)
         {
             spectrogram[i] = new double[fft_size / 2 + 1];
@@ -159,7 +258,8 @@ public class Mic : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update () {
+    void Update()
+    {
         //Debug.Log("micBuffer.Count: " + micBuffer.Count);
 
         if (micBuffer.Count < 12) return;
@@ -174,12 +274,12 @@ public class Mic : MonoBehaviour {
         micBuffer.RemoveRange(0, 10);
 
 
-        Dio(alloc_x.AddrOfPinnedObject(), x_length, 
-            fs, dioOption, 
+        Dio(alloc_x.AddrOfPinnedObject(), x_length,
+            fs, dioOption,
             alloc_time_axis.AddrOfPinnedObject(), alloc_tmp_f0.AddrOfPinnedObject());
 
-        StoneMask(alloc_x.AddrOfPinnedObject(), x_length, 
-            fs, alloc_time_axis.AddrOfPinnedObject(), 
+        StoneMask(alloc_x.AddrOfPinnedObject(), x_length,
+            fs, alloc_time_axis.AddrOfPinnedObject(),
             alloc_tmp_f0.AddrOfPinnedObject(), f0_length, alloc_f0.AddrOfPinnedObject());
 
 
@@ -188,27 +288,27 @@ public class Mic : MonoBehaviour {
             alloc_f0.AddrOfPinnedObject(), f0_length,
             cheapTrickOption, alloc_spectrogram.AddrOfPinnedObject());
 
-        D4C(alloc_x.AddrOfPinnedObject(), x_length, 
-            fs, alloc_time_axis.AddrOfPinnedObject(), 
-            alloc_f0.AddrOfPinnedObject(), f0_length, 
+        D4C(alloc_x.AddrOfPinnedObject(), x_length,
+            fs, alloc_time_axis.AddrOfPinnedObject(),
+            alloc_f0.AddrOfPinnedObject(), f0_length,
             fft_size, d4cOption, alloc_aperiodicity.AddrOfPinnedObject());
 
         for (int i = 0; i < f0.Length; i++)
             f0[i] *= pitch;
 
 
-        Synthesis(alloc_f0.AddrOfPinnedObject(), f0_length, 
-            alloc_spectrogram.AddrOfPinnedObject(), alloc_aperiodicity.AddrOfPinnedObject(), 
-            fft_size, frame_period, fs, 
+        Synthesis(alloc_f0.AddrOfPinnedObject(), f0_length,
+            alloc_spectrogram.AddrOfPinnedObject(), alloc_aperiodicity.AddrOfPinnedObject(),
+            fft_size, frame_period, fs,
             y.Length, alloc_y.AddrOfPinnedObject());
 
         //for (int i = 0; i < y.Length; i++) y[i] = x[i];
 
-        //Debug.Log("check spectrogram, l: " + spectrogram.Length);
-        //for (int i = 0; i < spectrogram.Length; i++)
-        //{
-        //    Debug.Log("check spectrogram, l: " + i + " = " + spectrogram[i].Length);
-        //}
+        Debug.Log("check spectrogram, l: " + spectrogram.Length);
+        for (int i = 0; i < spectrogram.Length; i++)
+        {
+            Debug.Log("check spectrogram, l: " + i + " = " + spectrogram[i].Length);
+        }
 
 
 
@@ -252,7 +352,7 @@ public class Mic : MonoBehaviour {
         }
         micBuffer.Add(queue);
 
-        if(playableBuffer.Count == 0)
+        if (playableBuffer.Count == 0)
         {
             for (int i = 0; i < data.Length; i++)
                 data[i] = 0;
@@ -261,7 +361,7 @@ public class Mic : MonoBehaviour {
         var play = playableBuffer[0];
         playableBuffer.RemoveAt(0);
 
-        for(int i = 0; i < play.Length; i++)
+        for (int i = 0; i < play.Length; i++)
         {
             data[i * 2] = play[i];
             data[i * 2 + 1] = play[i];
