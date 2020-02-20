@@ -59,8 +59,8 @@ namespace WorldInApplePlugin {
 
     public class AllocableArray
     {
-        private double[] array_1 = null;
-        private double[][] array_2 = null;
+        double[] array_1 = null;
+        double[][] array_2 = null;
         private GCHandle allocedArray;
         public AllocableArray(int size_1, int size_2 = -1)
         {
@@ -72,8 +72,10 @@ namespace WorldInApplePlugin {
             else
             {
                 array_2 = new double[size_1][];
-                for (int i = 0; i < array_2.Length; i++)
+                for (int i = 0; i < size_1; i++)
+                {
                     array_2[i] = new double[size_2];
+                }
                 allocedArray = GCHandle.Alloc(array_2, GCHandleType.Pinned);
             }
         }
@@ -258,7 +260,9 @@ namespace WorldInApplePlugin {
 
         public void EstimateSpectral()
         {
+            Debug.Log("EstimateSpectral");
             CheapTrick(parameters.x, parameters.x_length, parameters.fs, parameters.time_axis, parameters.f0, parameters.f0_length, option, parameters.spectrogram);
+            var _ = parameters.spectrogram;
         }
     }
 
@@ -292,7 +296,9 @@ namespace WorldInApplePlugin {
 
         public void EstimatAperiodicity()
         {
+            Debug.Log("EstimatAperiodicity");
             D4C(parameters.x, parameters.x_length, parameters.fs, parameters.time_axis, parameters.f0, parameters.f0_length, parameters.fft_size, option, parameters.aperiodicity);
+            var _ = parameters.spectrogram;
         }
     }
 
@@ -329,6 +335,7 @@ namespace WorldInApplePlugin {
 
         public void Synthesis()
         {
+            Debug.Log("Synthesis");
             Synthesis(parameters.f0, parameters.f0_length, parameters.spectrogram, parameters.aperiodicity, parameters.fft_size, parameters.frame_period, parameters.fs, parameters.x_length, parameters.y);
         }
     }
