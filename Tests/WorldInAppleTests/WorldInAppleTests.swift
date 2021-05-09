@@ -6,7 +6,8 @@ final class WorldInAppleTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(WorldInApple().text, "Hello, World!")
+        let res = "Hello, World!"
+        XCTAssertEqual(res, "Hello, World!")
     }
 
     static var allTests = [

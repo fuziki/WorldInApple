@@ -8,7 +8,6 @@
 
 import Foundation
 import AVFoundation
-import UIKit
 import Accelerate
 
 public class WorldInApple {
