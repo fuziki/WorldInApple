@@ -1,8 +1,5 @@
 .DS_Store
-UserInterfaceState.xcuserstate
-
-Carthage/Checkouts
-Carthage/*
-# !Carthage/Build
-
-tmp.swift
+/.build
+/Packages
+/*.xcodeproj
+xcuserdata/
