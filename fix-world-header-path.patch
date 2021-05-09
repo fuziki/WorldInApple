@@ -1,0 +1,149 @@
+diff --git a/Sources/WorldLib/world/cheaptrick.h b/Sources/WorldLib/world/cheaptrick.h
+index 4be503c..b0ac415 100644
+--- a/Sources/WorldLib/world/cheaptrick.h
++++ b/Sources/WorldLib/world/cheaptrick.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_CHEAPTRICK_H_
+ #define WORLD_CHEAPTRICK_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/codec.h b/Sources/WorldLib/world/codec.h
+index b2e5ac2..d11a82f 100644
+--- a/Sources/WorldLib/world/codec.h
++++ b/Sources/WorldLib/world/codec.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_CODEC_H_
+ #define WORLD_CODEC_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/common.h b/Sources/WorldLib/world/common.h
+index 9f50256..6350937 100644
+--- a/Sources/WorldLib/world/common.h
++++ b/Sources/WorldLib/world/common.h
+@@ -6,8 +6,8 @@
+ #ifndef WORLD_COMMON_H_
+ #define WORLD_COMMON_H_
+ 
+-#include "world/fft.h"
+-#include "world/macrodefinitions.h"
++#include "fft.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/d4c.h b/Sources/WorldLib/world/d4c.h
+index 0e5e68b..a6e31e1 100644
+--- a/Sources/WorldLib/world/d4c.h
++++ b/Sources/WorldLib/world/d4c.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_D4C_H_
+ #define WORLD_D4C_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/dio.h b/Sources/WorldLib/world/dio.h
+index 87e8156..34d8e9d 100644
+--- a/Sources/WorldLib/world/dio.h
++++ b/Sources/WorldLib/world/dio.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_DIO_H_
+ #define WORLD_DIO_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/fft.h b/Sources/WorldLib/world/fft.h
+index 1fd829d..3f910df 100644
+--- a/Sources/WorldLib/world/fft.h
++++ b/Sources/WorldLib/world/fft.h
+@@ -9,7 +9,7 @@
+ #ifndef WORLD_FFT_H_
+ #define WORLD_FFT_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/harvest.h b/Sources/WorldLib/world/harvest.h
+index 504ac50..fd1828e 100644
+--- a/Sources/WorldLib/world/harvest.h
++++ b/Sources/WorldLib/world/harvest.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_HARVEST_H_
+ #define WORLD_HARVEST_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/matlabfunctions.h b/Sources/WorldLib/world/matlabfunctions.h
+index 2bc6523..cc21d38 100644
+--- a/Sources/WorldLib/world/matlabfunctions.h
++++ b/Sources/WorldLib/world/matlabfunctions.h
+@@ -6,8 +6,8 @@
+ #ifndef WORLD_MATLABFUNCTIONS_H_
+ #define WORLD_MATLABFUNCTIONS_H_
+ 
+-#include "world/common.h"
+-#include "world/macrodefinitions.h"
++#include "common.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/stonemask.h b/Sources/WorldLib/world/stonemask.h
+index de40ea7..54781fb 100644
+--- a/Sources/WorldLib/world/stonemask.h
++++ b/Sources/WorldLib/world/stonemask.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_STONEMASK_H_
+ #define WORLD_STONEMASK_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/synthesis.h b/Sources/WorldLib/world/synthesis.h
+index 1a3d8e1..582980a 100644
+--- a/Sources/WorldLib/world/synthesis.h
++++ b/Sources/WorldLib/world/synthesis.h
+@@ -6,7 +6,7 @@
+ #ifndef WORLD_SYNTHESIS_H_
+ #define WORLD_SYNTHESIS_H_
+ 
+-#include "world/macrodefinitions.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
+diff --git a/Sources/WorldLib/world/synthesisrealtime.h b/Sources/WorldLib/world/synthesisrealtime.h
+index 05c4ec1..fb7ecfe 100644
+--- a/Sources/WorldLib/world/synthesisrealtime.h
++++ b/Sources/WorldLib/world/synthesisrealtime.h
+@@ -6,8 +6,8 @@
+ #ifndef WORLD_SYNTHESISREALTIME_H_
+ #define WORLD_SYNTHESISREALTIME_H_
+ 
+-#include "world/common.h"
+-#include "world/macrodefinitions.h"
++#include "common.h"
++#include "macrodefinitions.h"
+ 
+ WORLD_BEGIN_C_DECLS
+ 
