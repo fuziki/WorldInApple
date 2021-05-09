@@ -14,6 +14,14 @@
 		520347CC2646936600295BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520347B72646936600295BA5 /* Assets.xcassets */; };
 		520347CD2646936600295BA5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520347B72646936600295BA5 /* Assets.xcassets */; };
 		52DAC45E2647CCDE0018F5D2 /* WorldInApple in Frameworks */ = {isa = PBXBuildFile; productRef = 52DAC45D2647CCDE0018F5D2 /* WorldInApple */; };
+		52DAC4BD2647E4670018F5D2 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4BC2647E4670018F5D2 /* ContentViewModel.swift */; };
+		52DAC4BE2647E4670018F5D2 /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4BC2647E4670018F5D2 /* ContentViewModel.swift */; };
+		52DAC4C22647E50D0018F5D2 /* IikanjiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4C12647E50D0018F5D2 /* IikanjiEngine.swift */; };
+		52DAC4C32647E50D0018F5D2 /* IikanjiEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4C12647E50D0018F5D2 /* IikanjiEngine.swift */; };
+		52DAC4C72647E5420018F5D2 /* AccelerateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4C62647E5420018F5D2 /* AccelerateUtil.swift */; };
+		52DAC4C82647E5420018F5D2 /* AccelerateUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4C62647E5420018F5D2 /* AccelerateUtil.swift */; };
+		52DAC4CC2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4CB2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift */; };
+		52DAC4CD2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52DAC4CB2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +33,10 @@
 		520347C42646936600295BA5 /* Multiplatform.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multiplatform.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520347C62646936600295BA5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		520347C72646936600295BA5 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		52DAC4BC2647E4670018F5D2 /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		52DAC4C12647E50D0018F5D2 /* IikanjiEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IikanjiEngine.swift; sourceTree = "<group>"; };
+		52DAC4C62647E5420018F5D2 /* AccelerateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerateUtil.swift; sourceTree = "<group>"; };
+		52DAC4CB2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +74,11 @@
 			children = (
 				520347B52646936400295BA5 /* MultiplatformApp.swift */,
 				520347B62646936400295BA5 /* ContentView.swift */,
+				52DAC4BC2647E4670018F5D2 /* ContentViewModel.swift */,
 				520347B72646936600295BA5 /* Assets.xcassets */,
+				52DAC4C12647E50D0018F5D2 /* IikanjiEngine.swift */,
+				52DAC4C62647E5420018F5D2 /* AccelerateUtil.swift */,
+				52DAC4CB2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -200,8 +216,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DAC4CC2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift in Sources */,
+				52DAC4C72647E5420018F5D2 /* AccelerateUtil.swift in Sources */,
 				520347CA2646936600295BA5 /* ContentView.swift in Sources */,
 				520347C82646936600295BA5 /* MultiplatformApp.swift in Sources */,
+				52DAC4BD2647E4670018F5D2 /* ContentViewModel.swift in Sources */,
+				52DAC4C22647E50D0018F5D2 /* IikanjiEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,8 +229,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52DAC4CD2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift in Sources */,
+				52DAC4C82647E5420018F5D2 /* AccelerateUtil.swift in Sources */,
 				520347CB2646936600295BA5 /* ContentView.swift in Sources */,
 				520347C92646936600295BA5 /* MultiplatformApp.swift in Sources */,
+				52DAC4BE2647E4670018F5D2 /* ContentViewModel.swift in Sources */,
+				52DAC4C32647E50D0018F5D2 /* IikanjiEngine.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

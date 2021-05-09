@@ -6,20 +6,27 @@
 //
 
 import SwiftUI
-import WorldInApple
-
-class ContentViewModel {
-    init() {
-        let world = WorldInApple(fs: 0, frame_period: 0, x_length: 0)
-    }
-}
 
 struct ContentView: View {
-    let vm = ContentViewModel()
+    @ObservedObject private var vm = ContentViewModel()
     
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack {
+            Text("Hello, world!")
+            Slider(value: $vm.pitch,
+                   in: 0.5...2,
+                   minimumValueLabel: Text("0.5"),
+                   maximumValueLabel: Text("2")) {
+                Text("pitch")
+            }
+            Slider(value: $vm.formant,
+                   in: 0.5...2,
+                   minimumValueLabel: Text("0.5"),
+                   maximumValueLabel: Text("2")) {
+                Text("formant")
+            }
+        }
+        .padding()
     }
 }
 
