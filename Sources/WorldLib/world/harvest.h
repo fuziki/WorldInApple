@@ -6,7 +6,7 @@
 #ifndef WORLD_HARVEST_H_
 #define WORLD_HARVEST_H_
 
-#include "world/macrodefinitions.h"
+#include "macrodefinitions.h"
 
 WORLD_BEGIN_C_DECLS
 

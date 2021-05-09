@@ -6,8 +6,8 @@
 #ifndef WORLD_SYNTHESISREALTIME_H_
 #define WORLD_SYNTHESISREALTIME_H_
 
-#include "world/common.h"
-#include "world/macrodefinitions.h"
+#include "common.h"
+#include "macrodefinitions.h"
 
 WORLD_BEGIN_C_DECLS
 
