@@ -31,11 +31,17 @@ Swift wrapper for vocoder World (https://github.com/mmorise/World)
 
 * Example for iOS
 
+```
+clone https://github.com/fuziki/WorldInApple
+cd WorldInApple
+open WorldInApple.xcworkspace
+```
+
 # Usage
 ## Shift AVAudioPCMBuffer pitch and formant
 
 ```swift
-let buffer: AVAufioPCMBuffer
+let buffer: AVAudioPCMBuffer
 x_length = buffer.frameLength  
 ```
 
@@ -63,3 +69,13 @@ let result = worldInApple.conv(buffer: buffer)
 ```
 https://github.com/fuziki/WorldInApple
 ```
+
+# Makefile
+
+* install-worldlib
+  * download World
+  * copy files
+  * apply patch file
+
+* clean-worldlib
+  * clean world
