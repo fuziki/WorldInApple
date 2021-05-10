@@ -13,19 +13,29 @@ struct ContentView: View {
     var body: some View {
         VStack {
             Text("Hello, world!")
+            Text("Suggested to use earphones!")
+            
+            Spacer()
+            
+            Text("pitch: \(vm.pitch)")
             Slider(value: $vm.pitch,
                    in: 0.5...2,
                    minimumValueLabel: Text("0.5"),
                    maximumValueLabel: Text("2")) {
-                Text("pitch")
+                EmptyView()
             }
+
+            Spacer()
+
+            Text("formant: \(vm.formant)")
             Slider(value: $vm.formant,
                    in: 0.5...2,
                    minimumValueLabel: Text("0.5"),
                    maximumValueLabel: Text("2")) {
-                Text("formant")
+                EmptyView()
             }
         }
+        .frame(width: 200)
         .padding()
     }
 }

@@ -19,11 +19,12 @@ public class WorldInAppleSynthesizer3: WorldInAppleComponents {
     
     required public init(parameters: WorldInAppleParameters) {
         self.parameters = parameters
-        
-        InitializeSynthesizer(Int32(parameters.fs), parameters.frame_period, Int32(parameters.fft_size), Int32(buffer_size), 100, &worldSynthesizer)
     }
     
     public func synthesis(buffer: AVAudioPCMBuffer) -> AVAudioPCMBuffer? {
+
+        InitializeSynthesizer(Int32(parameters.fs), parameters.frame_period, Int32(parameters.fft_size), Int32(buffer_size), 100, &worldSynthesizer)
+
         var offset = 0
         var index = 0
         
