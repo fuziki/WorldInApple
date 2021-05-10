@@ -100,7 +100,7 @@ public class IikanjiEngine {
 //        engine.connect(muteMixer, to: engine.mainMixerNode, format: interFormat)
         muteMixer.volume = 0
         
-        tapMixer.installTap(onBus: 0, bufferSize: 19200, format: interFormat, block: { [weak self] (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
+        engine.inputNode.installTap(onBus: 0, bufferSize: AVAudioFrameCount(48000 * 0.4), format: interFormat, block: { [weak self] (buffer: AVAudioPCMBuffer, _: AVAudioTime) in
             self?.onAudio(buffer: buffer)
         })
         

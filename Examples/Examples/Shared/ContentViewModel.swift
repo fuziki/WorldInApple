@@ -39,11 +39,34 @@ class ContentViewModel: ObservableObject {
             }
             .store(in: &cancellables)
         
+        #if os(iOS)
         let session = AVAudioSession.sharedInstance()
         try! session.setCategory( .playAndRecord, mode: .default, options: [.allowBluetoothA2DP, .allowBluetooth])
         try! AVAudioSession.sharedInstance().setPreferredSampleRate(Double(fs))
         try! session.setActive(true)
+        #endif
         
+        switch AVCaptureDevice.authorizationStatus(for: .audio) {
+            case .authorized:
+                startEngine()
+            
+            case .notDetermined:
+                AVCaptureDevice.requestAccess(for: .audio) { [weak self] granted in
+                    if granted {
+                        DispatchQueue.main.async {
+                            self?.startEngine()
+                        }
+                    }
+                }
+            
+            case .denied, .restricted:
+                return
+        @unknown default:
+            return
+        }
+    }
+    
+    private func startEngine() {
         iikanji = IikanjiEngine()
         iikanji.convTapAudio(handler: { [weak self] (buffer: AVAudioPCMBuffer) in
 //            self?.onAudio(buffer: buffer)
