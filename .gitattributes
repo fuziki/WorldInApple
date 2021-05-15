@@ -1,0 +1,2 @@
+Sources/WorldLib/world*.h linguist-detectable=false
+Sources/WorldLib/*.cpp linguist-detectable=false
