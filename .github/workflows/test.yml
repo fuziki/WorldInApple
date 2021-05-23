@@ -43,7 +43,7 @@ jobs:
       - name: Setup gems
         run: |
           gem install bundler
-          bundle install
+          bundle install --path=vendor/bundle
       - name: Run Danger
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
