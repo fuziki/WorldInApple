@@ -35,4 +35,18 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Test
         run: swift test
+        
+      - name: Setup Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '2.7'
+      - name: Setup gems
+        run: |
+          gem install bundler
+          bundle install
+      - name: Run Danger
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bundle exec danger
+      
 
