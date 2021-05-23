@@ -11,3 +11,11 @@ warn("Big PR") if git.lines_of_code > 500
 # Don't let testing shortcuts get into master by accident
 # fail("fdescribe left in tests") if `grep -r fdescribe specs/ `.length > 1
 # fail("fit left in tests") if `grep -r fit specs/ `.length > 1
+
+# 編集範囲のみチェック
+github.dismiss_out_of_range_messages
+
+# label の設定は必須
+if github.pr_labels.first.nil? then
+    failure "label must be set"
+end
