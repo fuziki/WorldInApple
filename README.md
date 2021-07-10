@@ -4,10 +4,15 @@
 ![Swift](https://img.shields.io/badge/swift-green.svg)
 ![Xode](https://img.shields.io/badge/xcode-xcode12-green.svg)
 
-Swift wrapper for vocoder World (https://github.com/mmorise/World)  
+** Swift wrapper for vocoder World (https://github.com/mmorise/World) **
 
-* Swift wrapper
-  * Support iOS
+# Features
+ * Support Platform
+   * [x] iOS (iOS11 or later)
+   * [x] macOS (Catalina or later)
+* Property
+  * [x] Shift Pitch
+  * [x] Shift Formant
   
 # Required
 
