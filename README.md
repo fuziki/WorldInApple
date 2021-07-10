@@ -4,7 +4,7 @@
 ![Swift](https://img.shields.io/badge/swift-green.svg)
 ![Xode](https://img.shields.io/badge/xcode-xcode12-green.svg)
 
-** Swift wrapper for vocoder World (https://github.com/mmorise/World) **
+**Swift wrapper for vocoder World (https://github.com/mmorise/World)**
 
 # Features
  * Support Platform
