@@ -15,7 +15,8 @@ class AccelerateUtil {
         var windowed = Self.multiplyWindow(data)
         var data_i = [Float](repeating: 0, count: data.count)
         var ans = DSPSplitComplex(realp: &windowed, imagp: &data_i)
-        let indata:UnsafePointer<DSPComplex> = UnsafeRawPointer(windowed).bindMemory(to: DSPComplex.self, capacity: data.count)
+        let indata: UnsafePointer<DSPComplex> =
+            UnsafeRawPointer(windowed).bindMemory(to: DSPComplex.self, capacity: data.count)
         vDSP_ctoz(indata, 2, &ans, 1, vDSP_Length(data.count / 2))
         vDSP_fft_zrip(shareFFTSetup, &ans, 1, vDSP_Length(log2(Double(data.count))), Int32(Accelerate.FFT_FORWARD))
         return ans
@@ -28,7 +29,7 @@ class AccelerateUtil {
         vDSP_fft_zrip(shareFFTSetup, &indata, 1, vDSP_Length(log2(Double(data.count * 2))), FFTDirection(FFT_INVERSE))
         vDSP_ztoc(&indata, 1, ans, 2, vDSP_Length(data.count))
         let floatP = UnsafeRawPointer(ans).bindMemory(to: Float.self, capacity: data.count * 2)
-        let rst = Array(UnsafeBufferPointer(start:floatP, count: data.count * 2)[0..<data.count])
+        let rst = Array(UnsafeBufferPointer(start: floatP, count: data.count * 2)[0..<data.count])
         return rst
     }
     enum WindowType {
@@ -41,7 +42,7 @@ class AccelerateUtil {
         var windowData = [Float](repeating: 0, count: indata.count)
         switch type {
         case .hann:
-            vDSP_hann_window(&windowData, vDSP_Length(indata.count), Int32(0)) //vDSP_blkman_window
+            vDSP_hann_window(&windowData, vDSP_Length(indata.count), Int32(0)) // vDSP_blkman_window
         case .hamming:
             vDSP_hamm_window(&windowData, vDSP_Length(indata.count), Int32(0))
         case .blackman:

@@ -1,4 +1,3 @@
-
 install-worldlib:
 	git submodule update --init --recursive
 	cp -r World/src/. Sources/WorldLib/
@@ -7,3 +6,7 @@ install-worldlib:
 clean-worldlib:
 	rm -rf Sources/WorldLib/*.cpp
 	rm -r Sources/WorldLib/world
+
+lint:
+	swift run --package-path ./tools swiftlint autocorrect --format
+	swift run --package-path ./tools swiftlint

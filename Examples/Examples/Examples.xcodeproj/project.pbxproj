@@ -38,6 +38,7 @@
 		52DAC4C12647E50D0018F5D2 /* IikanjiEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IikanjiEngine.swift; sourceTree = "<group>"; };
 		52DAC4C62647E5420018F5D2 /* AccelerateUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccelerateUtil.swift; sourceTree = "<group>"; };
 		52DAC4CB2648154B0018F5D2 /* AVAudioPCMBuffer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVAudioPCMBuffer+Extension.swift"; sourceTree = "<group>"; };
+		52F09CAC26AC80C400B8B323 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +64,7 @@
 		520347AD2646932900295BA5 = {
 			isa = PBXGroup;
 			children = (
+				52F09CAC26AC80C400B8B323 /* Makefile */,
 				520347B42646936400295BA5 /* Shared */,
 				520347BE2646936600295BA5 /* iOS */,
 				520347C52646936600295BA5 /* macOS */,
@@ -128,6 +130,7 @@
 				520347B82646936600295BA5 /* Sources */,
 				520347B92646936600295BA5 /* Frameworks */,
 				520347BA2646936600295BA5 /* Resources */,
+				52F09CAB26AC7ED700B8B323 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -215,6 +218,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		52F09CAB26AC7ED700B8B323 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nmake lint\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		520347B82646936600295BA5 /* Sources */ = {

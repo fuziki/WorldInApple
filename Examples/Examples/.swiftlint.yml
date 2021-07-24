@@ -1,0 +1,17 @@
+included:
+  - ./
+  - ../../Sources/WorldInApple
+# naming rules can set warnings/errors for min_length and max_length
+# additionally they can set excluded names
+type_name:
+  min_length: 0 # only warning
+  max_length: # warning and error
+    warning: 40
+    error: 50
+    allowed_symbols: ["_"] # these are allowed in type names
+identifier_name:
+  min_length: # only min_length
+    warning: 0
+    error: 0 # only error
+  excluded: ["_"] # excluded via string array
+  allowed_symbols: ["_"]

@@ -9,16 +9,16 @@ import Foundation
 import AVFoundation
 
 extension AVAudioPCMBuffer {
-    static func +(l: AVAudioPCMBuffer, r: AVAudioPCMBuffer) -> AVAudioPCMBuffer? {
+    static func + (l: AVAudioPCMBuffer, r: AVAudioPCMBuffer) -> AVAudioPCMBuffer? {
         if l.format != r.format {
             return nil
         }
-        
+
         let frameCapacity = l.frameLength + r.frameLength
-        
+
         let ret = AVAudioPCMBuffer(pcmFormat: l.format, frameCapacity: frameCapacity)!
         ret.frameLength = ret.frameCapacity
-        
+
         let src_l: UnsafeRawPointer = UnsafeRawPointer((l.audioBufferList.pointee.mBuffers.mData)!)
         let src_r: UnsafeRawPointer = UnsafeRawPointer((r.audioBufferList.pointee.mBuffers.mData)!)
 
@@ -29,7 +29,7 @@ extension AVAudioPCMBuffer {
         let dst_r: UnsafeMutableRawPointer = (ret.audioBufferList.pointee.mBuffers.mData?.advanced(by: len_l))!
         memcpy(dst_l, src_l, len_l)
         memcpy(dst_r, src_r, len_r)
-        
+
         return ret
     }
 }

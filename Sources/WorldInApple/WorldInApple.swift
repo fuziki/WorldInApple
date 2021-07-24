@@ -11,23 +11,23 @@ import AVFoundation
 import Accelerate
 
 public class WorldInApple {
-    
+
     private var fs: Int
     private var frame_period: Double
     private var x_length: Int
-    
+
     private var parameters: WorldInAppleParameters
     private var f0Estimator: DioF0Estimator
     private var spectralEnvelopeEstimator: SpectralEnvelopeEstimator
     private var aperiodicityEstimator: AperiodicityEstimator
     private var parameterModificator: ParameterModificator
     private var synthesizer: WorldInAppleSynthesizer3
-    
+
     private var onUpdateSettingHandlers: [(_ fs: Int, _ frame_period: Double, _ x_length: Int) -> Void] = []
     public func onUpdateSetting(handler: @escaping (_ fs: Int, _ frame_period: Double, _ x_length: Int) -> Void) {
         onUpdateSettingHandlers.append(handler)
     }
-    
+
     public init(fs: Int, frame_period: Double, x_length: Int) {
         self.fs = fs
         self.frame_period = frame_period
@@ -39,7 +39,7 @@ public class WorldInApple {
         parameterModificator = ParameterModificator(parameters: parameters)
         synthesizer = WorldInAppleSynthesizer3(parameters: parameters)
     }
-    
+
     public func updateSetting(fs _fs: Int? = nil,
                               frame_period _frame_period: Double? = nil,
                               x_length _x_length: Int? = nil) {
@@ -62,21 +62,21 @@ public class WorldInApple {
             handler(fs, frame_period, x_length)
         }
     }
-    
+
     deinit {
         onUpdateSettingHandlers.removeAll()
     }
-    
+
     public func set(pitch: Double? = nil, formant: Double? = nil) {
         parameterModificator.set(pitch: pitch, formant: formant)
     }
-    
+
     public func conv(buffer: AVAudioPCMBuffer) -> AVAudioPCMBuffer? {
         let x = (buffer.audioBufferList.pointee.mBuffers.mData?.assumingMemoryBound(to: Double.self))!
         let x_length = Int32(buffer.frameLength)
 
         updateSetting(x_length: Int(x_length))
-        
+
         f0Estimator.estimateF0(x: x, x_length: x_length)
 
         spectralEnvelopeEstimator.estimateSpectral(x: x, x_length: x_length)
