@@ -16,7 +16,7 @@
   
 # Required
 
-* Xcode 12
+* Xcode 13.0
 
 # Projects
 ## WorldInApple
